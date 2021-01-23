@@ -71,37 +71,78 @@
     </header><!-- End Header -->
 
     <!-- ======= Hero Section ======= -->
-    <section>
 
-        <div class="container">
-
-            <h1 class="text-center">BSCS I</h1>
-
-            <h2 class="my-4">Overview:</h2>
-
-            <div class="jumbotron jumbotron-fluid">
-                <div class="container">
-                    <h1 class="display-4">Computer Science</h1>
-                    <p class="lead">Be at the forefront of emerging technology with the Bachelor of Science in Computer Science program. Build a solid foundation in programming, software engineering, algorithm development, computer architecture, operating systems and networks through the latest software tools and industry standard technologies. BSCS graduates will be equipped with strong technical skills to innovate computing solutions and programs across various industries.</p>
+    <div class="container">
+        <section></section>
+        <h1 class="text-center">BSCS I</h1>
+        <div class="row justify-content-between my-3 mx-2">
+            <div class="col-lg-3 col-md-12 col-sm-12 shadow-lg p-3 mb-5 bg-white rounded" style="height:30vh; background: rgb(189, 187, 187);">
+                <div style="height: 100px; width:100px; margin: 0 auto;" class="mt-2 text-center">
+                    <img src="assets/img/directors/perfecto.jpg" class="img-thumbnail" alt="">
+                </div>
+                <div class="text-center">
+                    <h5>Test Name</h5>
+                </div>
+                <div class="text-center">
+                    <a href="">View Profile</a>
                 </div>
             </div>
+            <div class="col-lg-5 col-md-12 col-sm-12 h-75 shadow-lg p-3 mb-5 bg-white rounded" style="min-height: 35vh; background: rgb(189, 187, 187);">
+                <textarea name="" class="form-control" id="" cols="10" rows="4" placeholder="Start a discussion..."></textarea>
+                <div class="mt-4 text-right">
+                    <button class="get-started-btn scrollto text-dark">Post</button>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-12 col-sm-12 h-100 shadow-lg p-3 mb-5 bg-white rounded" style="min-height: 50vh; background: rgb(189, 187, 187);">
+                <h5 class="mt-1">Todo list</h5>
+                <textarea name="" id="" cols="10" rows="3" class="form-control" placeholder="..."></textarea>
+                <div class="mt-1 text-right">
+                    <button class="get-started-btn scrollto text-dark">Add</button>
+                </div>
+
+                <hr>
 
 
+                <div class="overflow-auto">
+                    Finish my homework before friday Finish my homework before friday Finish my homework before friday Finish my homework before friday
+                </div>
+
+                <div class="overflow-auto"></div>
+
+            </div>
         </div>
 
-        </div>
+        <hr class="my-1">
 
+    </div>
+
+    <section>
+        <div class="container">
+            <h2 class="my-1">Posts</h2>
+            <div class="row mb-5">
+                <div class="w-50 h-100 m-auto shadow-lg p-3 mb-5 bg-white rounded" style="min-height: 35vh;background: rgb(189, 187, 187);"></div>
+            </div>
+            <div class="row mb-5">
+                <div class="w-50 h-100 m-auto shadow-lg p-3 mb-5 bg-white rounded" style="min-height: 35vh;background: rgb(189, 187, 187);"></div>
+            </div>
+        </div>
     </section>
+
+
+
+
+
+
     <!-- End Hero -->
 
     <!-- ======= Footer ======= -->
-    <!-- <footer id="footer">
-        <div class="container footer footer-bottom clearfix text-center">
-            <div class="copyright">
-                &copy; Copyright <strong><span>NORSU</span></strong> | <?php echo date('Y'); ?>
-            </div>
-        </div>
-    </footer> -->
+    <!-- <footer id=" footer">
+                    <div class="container footer footer-bottom clearfix text-center">
+                        <div class="copyright">
+                            &copy; Copyright <strong><span>NORSU</span></strong> | <?php echo date('Y'); ?>
+                        </div>
+                    </div>
+                    </footer> -->
     <!-- End Footer -->
 
     <!-- Vendor JS Files -->

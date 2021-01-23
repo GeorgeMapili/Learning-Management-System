@@ -1736,3 +1736,8 @@ section {
     padding-top: 4px;
   }
 }
+
+/* Main Page Css*/
+.sideBarMain {
+  background: rgb(189, 187, 187);
+}

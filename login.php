@@ -66,7 +66,7 @@
                         <input type="password" class="form-control" id="exampleInputPassword1">
                     </div>
                     <div class="text-center ">
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <button type="submit" class="btn btn-info btn-block">Submit</button>
                     </div>
                 </form>
             </div>

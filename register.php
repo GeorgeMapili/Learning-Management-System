@@ -100,7 +100,7 @@
                     </div>
 
                     <div class="text-center ">
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <button type="submit" class="btn btn-info btn-block">Submit</button>
                     </div>
                 </form>
             </div>
@@ -124,9 +124,6 @@
         </div>
     </footer>
     <!-- End Footer -->
-
-    <a href="#" class="back-to-top"><i class="ri-arrow-up-line"></i></a>
-    <div id="preloader"></div>
 
     <!-- Vendor JS Files -->
     <script src="assets/vendor/jquery/jquery.min.js"></script>
