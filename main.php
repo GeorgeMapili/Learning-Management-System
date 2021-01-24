@@ -93,21 +93,61 @@
                     <button class="get-started-btn scrollto text-dark">Post</button>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-12 col-sm-12 h-100 shadow-lg p-3 mb-5 bg-white rounded" style="min-height: 50vh; background: rgb(189, 187, 187);">
+            <div class="col-lg-3 col-md-12 col-sm-12 shadow-lg p-3 mb-5 bg-white rounded" style="max-height: 50vh; background: rgb(189, 187, 187);">
                 <h5 class="mt-1">Todo list</h5>
-                <textarea name="" id="" cols="10" rows="3" class="form-control" placeholder="..."></textarea>
-                <div class="mt-1 text-right">
-                    <button class="get-started-btn scrollto text-dark">Add</button>
+                <!-- <textarea name="" id="" cols="10" rows="3" class="form-control" placeholder="..."></textarea> -->
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@fat">
+                    Add Todo
+                </button>
+
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Todo</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <form>
+                                    <div class="form-group">
+                                        <label for="recipient-name" class="col-form-label">Deadline:</label>
+                                        <input type="date" class="form-control" id="recipient-name">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="message-text" class="col-form-label">Body:</label>
+                                        <textarea class="form-control" id="message-text" placeholder="..."></textarea>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-primary">Add</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <hr>
 
-
-                <div class="overflow-auto">
-                    Finish my homework before friday Finish my homework before friday Finish my homework before friday Finish my homework before friday
+                <div class="list-group list-group-flush overflow-auto h-50">
+                    <a href="#" class="list-group-item list-group-item-action bg-light">Dashboard</a>
+                    <a href="#" class="list-group-item list-group-item-action bg-light">Menu 1</a>
+                    <a href="#" class="list-group-item list-group-item-action bg-light">Menu 2</a>
+                    <a href="#" class="list-group-item list-group-item-action bg-light">Menu 3</a>
+                    <a href="#" class="list-group-item list-group-item-action bg-light">Menu 4</a>
+                    <a href="#" class="list-group-item list-group-item-action bg-light">Menu 5</a>
+                    <a href="#" class="list-group-item list-group-item-action bg-light">Menu 6</a>
+                    <a href="#" class="list-group-item list-group-item-action bg-light">Menu 7</a>
+                    <a href="#" class="list-group-item list-group-item-action bg-light">Menu 8</a>
+                    <a href="#" class="list-group-item list-group-item-action bg-light">Menu 9</a>
+                    <a href="#" class="list-group-item list-group-item-action bg-light">Menu 10</a>
+                    <a href="#" class="list-group-item list-group-item-action bg-light">Menu 11</a>
+                    <a href="#" class="list-group-item list-group-item-action bg-light">Menu 12</a>
+                    <a href="#" class="list-group-item list-group-item-action bg-light">Menu 13</a>
+                    <a href="#" class="list-group-item list-group-item-action bg-light">Menu 14</a>
                 </div>
-
-                <div class="overflow-auto"></div>
 
             </div>
         </div>
