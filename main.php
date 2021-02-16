@@ -1,203 +1,210 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php require_once('layout/student/header.php'); ?>
+<!-- ======= Hero Section ======= -->
 
-<head>
-    <meta charset="utf-8">
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-
-    <title>NORSU</title>
-    <meta content="" name="description">
-    <meta content="" name="keywords">
-
-    <!-- Favicons -->
-    <link href="assets/img/norsu.png" rel="icon">
-    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
-
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Jost:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
-
-    <!-- Vendor CSS Files -->
-    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="assets/vendor/icofont/icofont.min.css" rel="stylesheet">
-    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-    <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
-    <link href="assets/vendor/venobox/venobox.css" rel="stylesheet">
-    <link href="assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-
-    <!-- Template Main CSS File -->
-    <link href="assets/css/style.css" rel="stylesheet">
-</head>
-
-<body>
-
-    <!-- ======= Header ======= -->
-    <header id="headers" class="fixed-top ">
-        <div class="container d-flex align-items-center">
-
-            <h1 class="logo mr-auto"><a href="home.php">NORSU</a></h1>
-
-            <nav class="nav-menu d-none d-lg-block">
-                <ul>
-                    <li class="active">
-                        <div class="btn-group">
-                            <a href="home.php" class="btn btn-secondary">My Class</a>
-                            <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" id="dropdownMenuReference" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-reference="parent">
-                                <span class="sr-only">Toggle Dropdown</span>
-                            </button>
-                            <div class="dropdown-menu bg-dark" aria-labelledby="dropdownMenuReference">
-                                <a class="dropdown-item" href="myclassmates.php">My Classmates</a>
-                                <a class="dropdown-item" href="subjectoverview.php">Subject Overview</a>
-                                <a class="dropdown-item" href="#">Downloadable Materials</a>
-                                <a class="dropdown-item" href="#">Assignments</a>
-                                <a class="dropdown-item" href="#">Announcements</a>
-                                <a class="dropdown-item" href="#">Quiz</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">My Class</a>
-                            </div>
-                        </div>
-                    </li>
-                    <li class=""><a href="notification.php">Notification</a></li>
-                    <li class=""><a href="message.php">Message</a></li>
-
-                </ul>
-
-            </nav>
-
-            <a href="login.php" class="get-started-btn scrollto">Profile</a>
-            <a href="login.php" class="get-started-btn scrollto">Logout</a>
-
+<div class="container">
+    <section></section>
+    <h1 class="text-center">BSCS I</h1>
+    <div class="row justify-content-between my-3 mx-2">
+        <div class="col-lg-3 col-md-12 col-sm-12 shadow-lg p-3 mb-5 bg-white rounded" style="height:30vh; background: rgb(189, 187, 187);">
+            <div style="height: 100px; width:100px; margin: 0 auto;" class="mt-2 text-center">
+                <img src="assets/img/directors/perfecto.jpg" class="img-thumbnail" alt="">
+            </div>
+            <div class="text-center">
+                <h5>Test Name</h5>
+            </div>
+            <div class="text-center">
+                <a href="">View Profile</a>
+            </div>
         </div>
-    </header><!-- End Header -->
-
-    <!-- ======= Hero Section ======= -->
-
-    <div class="container">
-        <section></section>
-        <h1 class="text-center">BSCS I</h1>
-        <div class="row justify-content-between my-3 mx-2">
-            <div class="col-lg-3 col-md-12 col-sm-12 shadow-lg p-3 mb-5 bg-white rounded" style="height:30vh; background: rgb(189, 187, 187);">
-                <div style="height: 100px; width:100px; margin: 0 auto;" class="mt-2 text-center">
-                    <img src="assets/img/directors/perfecto.jpg" class="img-thumbnail" alt="">
-                </div>
-                <div class="text-center">
-                    <h5>Test Name</h5>
-                </div>
-                <div class="text-center">
-                    <a href="">View Profile</a>
-                </div>
+        <div class="col-lg-5 col-md-12 col-sm-12 h-75 shadow-lg p-3 mb-5 bg-white rounded" style="min-height: 35vh; background: rgb(189, 187, 187);">
+            <textarea name="" class="form-control" id="" cols="10" rows="4" placeholder="Start a discussion..."></textarea>
+            <div class="mt-4 text-right">
+                <button class="get-started-btn scrollto text-dark">Post</button>
             </div>
-            <div class="col-lg-5 col-md-12 col-sm-12 h-75 shadow-lg p-3 mb-5 bg-white rounded" style="min-height: 35vh; background: rgb(189, 187, 187);">
-                <textarea name="" class="form-control" id="" cols="10" rows="4" placeholder="Start a discussion..."></textarea>
-                <div class="mt-4 text-right">
-                    <button class="get-started-btn scrollto text-dark">Post</button>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-12 col-sm-12 shadow-lg p-3 mb-5 bg-white rounded" style="max-height: 50vh; background: rgb(189, 187, 187);">
-                <h5 class="mt-1">Todo list</h5>
-                <!-- <textarea name="" id="" cols="10" rows="3" class="form-control" placeholder="..."></textarea> -->
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@fat">
-                    Add Todo
-                </button>
+        </div>
+        <div class="col-lg-3 col-md-12 col-sm-12 shadow-lg p-3 mb-5 bg-white rounded" style="max-height: 50vh; background: rgb(189, 187, 187);">
+            <h5 class="mt-1">Task list</h5>
+            <!-- <textarea name="" id="" cols="10" rows="3" class="form-control" placeholder="..."></textarea> -->
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@fat">
+                Add Task
+            </button>
 
-                <!-- Modal -->
-                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">Todo</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <div class="modal-body">
-                                <form>
-                                    <div class="form-group">
-                                        <label for="recipient-name" class="col-form-label">Deadline:</label>
-                                        <input type="date" class="form-control" id="recipient-name">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="message-text" class="col-form-label">Body:</label>
-                                        <textarea class="form-control" id="message-text" placeholder="..."></textarea>
-                                    </div>
-                                </form>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-primary">Add</button>
-                            </div>
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Todo</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form>
+                                <div class="form-group">
+                                    <label for="recipient-name" class="col-form-label">Deadline:</label>
+                                    <input type="date" class="form-control" id="recipient-name">
+                                </div>
+                                <div class="form-group">
+                                    <label for="message-text" class="col-form-label">Title</label>
+                                    <input type="text" class="form-control" placeholder="..." />
+                                </div>
+                                <div class="form-group">
+                                    <label for="message-text" class="col-form-label">Body:</label>
+                                    <textarea class="form-control" id="message-text" placeholder="..."></textarea>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary">Add</button>
                         </div>
                     </div>
                 </div>
-
-                <hr>
-
-                <div class="list-group list-group-flush overflow-auto h-50">
-                    <a href="#" class="list-group-item list-group-item-action bg-light">Dashboard</a>
-                    <a href="#" class="list-group-item list-group-item-action bg-light">Menu 1</a>
-                    <a href="#" class="list-group-item list-group-item-action bg-light">Menu 2</a>
-                    <a href="#" class="list-group-item list-group-item-action bg-light">Menu 3</a>
-                    <a href="#" class="list-group-item list-group-item-action bg-light">Menu 4</a>
-                    <a href="#" class="list-group-item list-group-item-action bg-light">Menu 5</a>
-                    <a href="#" class="list-group-item list-group-item-action bg-light">Menu 6</a>
-                    <a href="#" class="list-group-item list-group-item-action bg-light">Menu 7</a>
-                    <a href="#" class="list-group-item list-group-item-action bg-light">Menu 8</a>
-                    <a href="#" class="list-group-item list-group-item-action bg-light">Menu 9</a>
-                    <a href="#" class="list-group-item list-group-item-action bg-light">Menu 10</a>
-                    <a href="#" class="list-group-item list-group-item-action bg-light">Menu 11</a>
-                    <a href="#" class="list-group-item list-group-item-action bg-light">Menu 12</a>
-                    <a href="#" class="list-group-item list-group-item-action bg-light">Menu 13</a>
-                    <a href="#" class="list-group-item list-group-item-action bg-light">Menu 14</a>
-                </div>
-
             </div>
+
+            <hr>
+
+            <div class="list-group list-group-flush overflow-auto h-50">
+                <li class="list-group-item list-group-item-action bg-light">
+                    <div class="d-flex justify-content-between">
+                        <a href="#">Menu 1</a> <a href="#"><i class="fa fa-pencil" aria-hidden="true"></i></a> <a href="#"><i class="fa fa-trash" aria-hidden="true"></i></a>
+                    </div>
+                </li>
+                <li class="list-group-item list-group-item-action bg-light">
+                    <div class="d-flex justify-content-between">
+                        <a href="#">Menu 1</a> <a href="#"><i class="fa fa-pencil" aria-hidden="true"></i></a> <a href="#"><i class="fa fa-trash" aria-hidden="true"></i></a>
+                    </div>
+                </li>
+                <li class="list-group-item list-group-item-action bg-light">
+                    <div class="d-flex justify-content-between">
+                        <a href="#">Menu 1</a> <a href="#"><i class="fa fa-pencil" aria-hidden="true"></i></a> <a href="#"><i class="fa fa-trash" aria-hidden="true"></i></a>
+                    </div>
+                </li>
+                <li class="list-group-item list-group-item-action bg-light">
+                    <div class="d-flex justify-content-between">
+                        <a href="#">Menu 1</a> <a href="#"><i class="fa fa-pencil" aria-hidden="true"></i></a> <a href="#"><i class="fa fa-trash" aria-hidden="true"></i></a>
+                    </div>
+                </li>
+                <li class="list-group-item list-group-item-action bg-light">
+                    <div class="d-flex justify-content-between">
+                        <a href="#">Menu 1</a> <a href="#"><i class="fa fa-pencil" aria-hidden="true"></i></a> <a href="#"><i class="fa fa-trash" aria-hidden="true"></i></a>
+                    </div>
+                </li>
+                <li class="list-group-item list-group-item-action bg-light">
+                    <div class="d-flex justify-content-between">
+                        <a href="#">Menu 1</a> <a href="#"><i class="fa fa-pencil" aria-hidden="true"></i></a> <a href="#"><i class="fa fa-trash" aria-hidden="true"></i></a>
+                    </div>
+                </li>
+                <li class="list-group-item list-group-item-action bg-light">
+                    <div class="d-flex justify-content-between">
+                        <a href="#">Menu 1</a> <a href="#"><i class="fa fa-pencil" aria-hidden="true"></i></a> <a href="#"><i class="fa fa-trash" aria-hidden="true"></i></a>
+                    </div>
+                </li>
+                <li class="list-group-item list-group-item-action bg-light">
+                    <div class="d-flex justify-content-between">
+                        <a href="#">Menu 1</a> <a href="#"><i class="fa fa-pencil" aria-hidden="true"></i></a> <a href="#"><i class="fa fa-trash" aria-hidden="true"></i></a>
+                    </div>
+                </li>
+            </div>
+
         </div>
-
-        <hr class="my-1">
-
     </div>
 
-    <section>
-        <div class="container">
-            <h2 class="my-1">Posts</h2>
-            <div class="row mb-5">
-                <div class="w-50 h-100 m-auto shadow-lg p-3 mb-5 bg-white rounded" style="min-height: 35vh;background: rgb(189, 187, 187);"></div>
-            </div>
-            <div class="row mb-5">
-                <div class="w-50 h-100 m-auto shadow-lg p-3 mb-5 bg-white rounded" style="min-height: 35vh;background: rgb(189, 187, 187);"></div>
+    <hr class="my-1">
+
+</div>
+
+<section>
+    <div class="container">
+        <h2 class="my-1">Posts</h2>
+        <div class="row mb-5">
+            <div class="w-50 h-100 m-auto shadow-lg p-3 mb-5 bg-white rounded" style="min-height: 35vh;background: rgb(189, 187, 187);">
+                <div class="d-flex">
+                    <img style="height: 50px; width:50px;" src="assets/img/directors/perfecto.jpg" alt="..." class="rounded-circle">
+                    <h5 class="ml-2 mt-2">Test Name</h5>
+                    <small class="ml-auto">2020-2-16</small>
+                </div>
+                <div class="d-flex my-2">
+                    <i class="fa fa-ellipsis-h ml-auto" aria-hidden="true" style="cursor:pointer" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="#">Update</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Delete</a>
+                        </div>
+                    </i>
+                </div>
+                <div class="jumbotron jumbotron-fluid mt-2">
+                    <div class="container">
+                        <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum natus nisi doloribus debitis molestiae nemo repellat, adipisci et eum eligendi magni voluptatibus laudantium exercitationem maiores tempore voluptas vero ab aliquam.</p>
+                    </div>
+                </div>
             </div>
         </div>
-    </section>
 
-
-
-
-
-
-    <!-- End Hero -->
-
-    <!-- ======= Footer ======= -->
-    <!-- <footer id=" footer">
-                    <div class="container footer footer-bottom clearfix text-center">
-                        <div class="copyright">
-                            &copy; Copyright <strong><span>NORSU</span></strong> | <?php echo date('Y'); ?>
+        <div class="row mb-5">
+            <div class="w-50 h-100 m-auto shadow-lg p-3 mb-5 bg-white rounded" style="min-height: 35vh;background: rgb(189, 187, 187);">
+                <div class="d-flex">
+                    <img style="height: 50px; width:50px;" src="assets/img/directors/perfecto.jpg" alt="..." class="rounded-circle">
+                    <h5 class="ml-2 mt-2">Test Name</h5>
+                    <small class="ml-auto">2020-2-16</small>
+                </div>
+                <div class="d-flex my-2">
+                    <i class="fa fa-ellipsis-h ml-auto" aria-hidden="true" style="cursor:pointer" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="#">Update</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Delete</a>
                         </div>
+                    </i>
+                </div>
+                <div class="jumbotron jumbotron-fluid mt-2">
+                    <div class="container">
+                        <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum natus nisi doloribus debitis molestiae nemo repellat, adipisci et eum eligendi magni voluptatibus laudantium exercitationem maiores tempore voluptas vero ab aliquam.</p>
                     </div>
-                    </footer> -->
-    <!-- End Footer -->
+                </div>
+            </div>
+        </div>
 
-    <!-- Vendor JS Files -->
-    <script src="assets/vendor/jquery/jquery.min.js"></script>
-    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script>
-    <script src="assets/vendor/php-email-form/validate.js"></script>
-    <script src="assets/vendor/waypoints/jquery.waypoints.min.js"></script>
-    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-    <script src="assets/vendor/venobox/venobox.min.js"></script>
-    <script src="assets/vendor/owl.carousel/owl.carousel.min.js"></script>
-    <script src="assets/vendor/aos/aos.js"></script>
+        <div class="row mb-5">
+            <div class="w-50 h-100 m-auto shadow-lg p-3 mb-5 bg-white rounded" style="min-height: 35vh;background: rgb(189, 187, 187);">
+                <div class="d-flex">
+                    <img style="height: 50px; width:50px;" src="assets/img/directors/perfecto.jpg" alt="..." class="rounded-circle">
+                    <h5 class="ml-2 mt-2">Test Name</h5>
+                    <small class="ml-auto">2020-2-16</small>
+                </div>
+                <div class="d-flex my-2">
+                    <i class="fa fa-ellipsis-h ml-auto" aria-hidden="true" style="cursor:pointer" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="#">Update</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Delete</a>
+                        </div>
+                    </i>
+                </div>
+                <div class="jumbotron jumbotron-fluid mt-2">
+                    <div class="container">
+                        <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum natus nisi doloribus debitis molestiae nemo repellat, adipisci et eum eligendi magni voluptatibus laudantium exercitationem maiores tempore voluptas vero ab aliquam.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</section>
 
-    <!-- Template Main JS File -->
-    <script src="assets/js/main.js"></script>
+<!-- Vendor JS Files -->
+<script src="assets/vendor/jquery/jquery.min.js"></script>
+<script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+<script src="assets/vendor/php-email-form/validate.js"></script>
+<script src="assets/vendor/waypoints/jquery.waypoints.min.js"></script>
+<script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+<script src="assets/vendor/venobox/venobox.min.js"></script>
+<script src="assets/vendor/owl.carousel/owl.carousel.min.js"></script>
+<script src="assets/vendor/aos/aos.js"></script>
+
+<!-- Template Main JS File -->
+<script src="assets/js/main.js"></script>
 
 </body>
 

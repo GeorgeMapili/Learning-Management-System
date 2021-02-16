@@ -7,12 +7,30 @@
 
         <h1 class="text-center">BSCS I</h1>
 
-        <h2 class="my-4">Overview:</h2>
+        <h2 class="my-4">Announcement:</h2>
 
         <div class="jumbotron jumbotron-fluid">
             <div class="container">
-                <h1 class="display-4">Computer Science</h1>
-                <p class="lead">Be at the forefront of emerging technology with the Bachelor of Science in Computer Science program. Build a solid foundation in programming, software engineering, algorithm development, computer architecture, operating systems and networks through the latest software tools and industry standard technologies. BSCS graduates will be equipped with strong technical skills to innovate computing solutions and programs across various industries.</p>
+                <div class="list-group" style="height: 200px; overflow:scroll;">
+                    <a href="#" class="list-group-item list-group-item-action my-2">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h5 class="mb-1">Example Announcement of the subject</h5>
+                            <small>2020-02-14</small>
+                        </div>
+                    </a>
+                    <a href="#" class="list-group-item list-group-item-action my-2">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h5 class="mb-1">Example Announcement of the subject</h5>
+                            <small>2020-02-14</small>
+                        </div>
+                    </a>
+                    <a href="#" class="list-group-item list-group-item-action my-2">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h5 class="mb-1">Example Announcement of the subject</h5>
+                            <small>2020-02-14</small>
+                        </div>
+                    </a>
+                </div>
             </div>
         </div>
 
