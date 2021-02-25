@@ -1,13 +1,13 @@
-<?php require_once('layout/student/header.php'); ?>
-<!-- ======= Hero Section ======= -->
+<?php require_once('../layout/teacher/header1.php'); ?>
 
+<!-- ======= Hero Section ======= -->
 <div class="container">
     <section></section>
     <h1 class="text-center">BSCS I</h1>
     <div class="row justify-content-between my-3 mx-2">
         <div class="col-lg-3 col-md-12 col-sm-12 shadow-lg p-3 mb-5 bg-white rounded" style="height:30vh; background: rgb(189, 187, 187);">
             <div style="height: 100px; width:100px; margin: 0 auto;" class="mt-2 text-center">
-                <img src="assets/img/directors/perfecto.jpg" class="img-thumbnail" alt="">
+                <img src="../assets/img/directors/perfecto.jpg" class="img-thumbnail" alt="">
             </div>
             <div class="text-center">
                 <h5>Test Name</h5>
@@ -120,7 +120,7 @@
         <div class="row mb-5">
             <div class="w-50 h-100 m-auto shadow-lg p-3 mb-5 bg-white rounded" style="min-height: 35vh;background: rgb(189, 187, 187);">
                 <div class="d-flex">
-                    <img style="height: 50px; width:50px;" src="assets/img/directors/perfecto.jpg" alt="..." class="rounded-circle">
+                    <img style="height: 50px; width:50px;" src="../assets/img/directors/perfecto.jpg" alt="..." class="rounded-circle">
                     <h5 class="ml-2 mt-2">Test Name</h5>
                     <small class="ml-auto">2020-2-16</small>
                 </div>
@@ -144,7 +144,7 @@
         <div class="row mb-5">
             <div class="w-50 h-100 m-auto shadow-lg p-3 mb-5 bg-white rounded" style="min-height: 35vh;background: rgb(189, 187, 187);">
                 <div class="d-flex">
-                    <img style="height: 50px; width:50px;" src="assets/img/directors/perfecto.jpg" alt="..." class="rounded-circle">
+                    <img style="height: 50px; width:50px;" src="../assets/img/directors/perfecto.jpg" alt="..." class="rounded-circle">
                     <h5 class="ml-2 mt-2">Test Name</h5>
                     <small class="ml-auto">2020-2-16</small>
                 </div>
@@ -168,7 +168,7 @@
         <div class="row mb-5">
             <div class="w-50 h-100 m-auto shadow-lg p-3 mb-5 bg-white rounded" style="min-height: 35vh;background: rgb(189, 187, 187);">
                 <div class="d-flex">
-                    <img style="height: 50px; width:50px;" src="assets/img/directors/perfecto.jpg" alt="..." class="rounded-circle">
+                    <img style="height: 50px; width:50px;" src="../assets/img/directors/perfecto.jpg" alt="..." class="rounded-circle">
                     <h5 class="ml-2 mt-2">Test Name</h5>
                     <small class="ml-auto">2020-2-16</small>
                 </div>
@@ -193,18 +193,18 @@
 </section>
 
 <!-- Vendor JS Files -->
-<script src="assets/vendor/jquery/jquery.min.js"></script>
-<script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-<script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script>
-<script src="assets/vendor/php-email-form/validate.js"></script>
-<script src="assets/vendor/waypoints/jquery.waypoints.min.js"></script>
-<script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-<script src="assets/vendor/venobox/venobox.min.js"></script>
-<script src="assets/vendor/owl.carousel/owl.carousel.min.js"></script>
-<script src="assets/vendor/aos/aos.js"></script>
+<script src="../assets/vendor/jquery/jquery.min.js"></script>
+<script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="../assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+<script src="../assets/vendor/php-email-form/validate.js"></script>
+<script src="../assets/vendor/waypoints/jquery.waypoints.min.js"></script>
+<script src="../assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+<script src="../assets/vendor/venobox/venobox.min.js"></script>
+<script src="../assets/vendor/owl.carousel/owl.carousel.min.js"></script>
+<script src="../assets/vendor/aos/aos.js"></script>
 
 <!-- Template Main JS File -->
-<script src="assets/js/main.js"></script>
+<script src="../assets/js/main.js"></script>
 
 </body>
 

@@ -1,4 +1,4 @@
-<?php require_once('layout/student/header1.php') ?>
+<?php require_once('../layout/teacher/header.php'); ?>
 
 <!-- ======= Hero Section ======= -->
 <section>
@@ -38,7 +38,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <ul class="users" style="height:400px; overflow:scroll;">
+                                    <ul class="users" style="height:500px; overflow:scroll;">
                                         <li class="person" data-chat="person1">
                                             <div class="user">
                                                 <img src="https://www.bootdey.com/img/Content/avatar/avatar3.png" alt="Retail Admin">
@@ -249,7 +249,7 @@
                                         </li>
                                     </ul>
                                     <div class="form-group mt-3 mb-0">
-                                        <textarea class="form-control" rows="1" placeholder="Type your message here..."></textarea>
+                                        <textarea class="form-control" rows="3" placeholder="Type your message here..."></textarea>
                                     </div>
                                     <div class="form-group mt-3 mb-0">
                                         <button class="btn btn-info">Send</button>
@@ -271,31 +271,40 @@
     </div>
 
 </section>
-<!-- End Hero -->
+
+<main id="main">
+
+
+
+</main><!-- End #main -->
 
 <!-- ======= Footer ======= -->
-<!-- <footer id="footer">
-        <div class="container footer footer-bottom clearfix text-center">
-            <div class="copyright">
-                &copy; Copyright <strong><span>NORSU</span></strong> | <?php echo date('Y'); ?>
-            </div>
+<footer id="footer">
+
+    <div class="container footer-bottom clearfix text-center">
+        <div class="copyright">
+            &copy; Copyright <strong><span>NORSU</span></strong> | <?php echo date('Y'); ?>
         </div>
-    </footer> -->
+    </div>
+</footer>
 <!-- End Footer -->
 
+<a href="#" class="back-to-top"><i class="ri-arrow-up-line"></i></a>
+<div id="preloader"></div>
+
 <!-- Vendor JS Files -->
-<script src="assets/vendor/jquery/jquery.min.js"></script>
-<script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-<script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script>
-<script src="assets/vendor/php-email-form/validate.js"></script>
-<script src="assets/vendor/waypoints/jquery.waypoints.min.js"></script>
-<script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-<script src="assets/vendor/venobox/venobox.min.js"></script>
-<script src="assets/vendor/owl.carousel/owl.carousel.min.js"></script>
-<script src="assets/vendor/aos/aos.js"></script>
+<script src="../assets/vendor/jquery/jquery.min.js"></script>
+<script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="../assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+<script src="../assets/vendor/php-email-form/validate.js"></script>
+<script src="../assets/vendor/waypoints/jquery.waypoints.min.js"></script>
+<script src="../assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+<script src="../assets/vendor/venobox/venobox.min.js"></script>
+<script src="../assets/vendor/owl.carousel/owl.carousel.min.js"></script>
+<script src="../assets/vendor/aos/aos.js"></script>
 
 <!-- Template Main JS File -->
-<script src="assets/js/main.js"></script>
+<script src="../assets/js/main.js"></script>
 
 </body>
 

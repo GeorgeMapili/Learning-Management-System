@@ -24,17 +24,17 @@
     <link href="assets/vendor/venobox/venobox.css" rel="stylesheet">
     <link href="assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
     <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-
-    <!-- Font awesome cdn -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
 
     <!-- Template Main CSS File -->
     <link href="assets/css/style.css" rel="stylesheet">
+
+    <!-- Message Css -->
+    <link href="assets/css/message.css" rel="stylesheet">
 </head>
 
 <body>
 
-    <!-- ======= Header ======= -->
     <header id="headers" class="fixed-top ">
         <div class="container d-flex align-items-center">
 
@@ -49,12 +49,10 @@
                                 <span class="sr-only">Toggle Dropdown</span>
                             </button>
                             <div class="dropdown-menu bg-dark" aria-labelledby="dropdownMenuReference">
-                                <a class="dropdown-item" href="myclassmates.php">My Classmates</a>
-                                <a class="dropdown-item" href="subjectoverview.php">Subject Overview</a>
-                                <a class="dropdown-item" href="downloadable.php">Downloadable Materials</a>
-                                <a class="dropdown-item" href="assignments.php">Assignments</a>
-                                <a class="dropdown-item" href="announcement.php">Announcements</a>
-                                <a class="dropdown-item" href="quiz.php">Quiz</a>
+                                <a class="dropdown-item" href="home.php">My Class</a>
+                                <a class="dropdown-item" href="notification.php">Notification</a>
+                                <a class="dropdown-item" href="message.php">Message</a>
+                                <a class="dropdown-item" href="request.php">Request</a>
                                 <!-- <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="#">My Class</a> -->
                             </div>
@@ -65,7 +63,8 @@
 
             </nav>
 
-            <a href="login.php" class="get-started-btn scrollto">Logout</a>
+            <a href="profile.php" class="get-started-btn scrollto">Profile</a>
+            <a href="logout.php" class="get-started-btn scrollto">Logout</a>
 
         </div>
     </header><!-- End Header -->

@@ -1,0 +1,17 @@
+{
+    "name": "george/lm",
+    "authors": [
+        {
+            "name": "George Mapili",
+            "email": "georgemapili322@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "config\\": "config",
+            "core\\": "core",
+            "helper\\": "helper"
+        }
+    }
+}

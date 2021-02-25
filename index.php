@@ -27,6 +27,13 @@
 
     <!-- Template Main CSS File -->
     <link href="assets/css/style.css" rel="stylesheet">
+
+
+    <style>
+        .error {
+            color: red;
+        }
+    </style>
 </head>
 
 <body>
@@ -342,41 +349,38 @@
                                 <p>+63(035)225 9400, (035)225 5751</p>
                             </div>
 
-                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1655.4066220209606!2d123.30289085103684!3d9.311753625564794!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33ab6f1dfcce85c5%3A0x1a8ce1f20edd6e00!2sNegros%20Oriental%20State%20University%20-%20Main%20Campus!5e0!3m2!1sen!2sph!4v1611308474036!5m2!1sen!2sph" frameborder="0" style="border:0; width: 100%; height: 290px;" allowfullscreen></iframe>
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1655.4066220209606!2d123.30289085103684!3d9.311753625564794!2m3!1f0!2f0!3f0!3m2!loi1024!2i768!4f13.1!3m3!1m2!1s0x33ab6f1dfcce85c5%3A0x1a8ce1f20edd6e00!2sNegros%20Oriental%20State%20University%20-%20Main%20Campus!5e0!3m2!1sen!2sph!4v1611308474036!5m2!1sen!2sph" frameborder="0" style="border:0; width: 100%; height: 290px;" allowfullscreen></iframe>
                         </div>
 
                     </div>
 
                     <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
-                        <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+
+                        <form id="contactForm" class="php-email-form">
+                            <div id="ajaxResult"></div>
                             <div class="form-row">
                                 <div class="form-group col-md-6">
-                                    <label for="name">Your Name</label>
-                                    <input type="text" name="name" class="form-control" id="name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
-                                    <div class="validate"></div>
+                                    <label for="name">Name</label>
+                                    <input type="text" id="name" name="name" class="form-control" id="name" autocomplete="off" />
+                                    <div class="nameError text-danger"></div>
                                 </div>
                                 <div class="form-group col-md-6">
-                                    <label for="name">Your Email</label>
-                                    <input type="email" class="form-control" name="email" id="email" data-rule="email" data-msg="Please enter a valid email" />
-                                    <div class="validate"></div>
+                                    <label for="name">Email</label>
+                                    <input type="text" id="email" class="form-control" name="email" id="email" autocomplete="off" />
+                                    <div class="emailError text-danger"></div>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="name">Subject</label>
-                                <input type="text" class="form-control" name="subject" id="subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
-                                <div class="validate"></div>
+                                <input type="text" id="subject" class="form-control" name="subject" id="subject" autocomplete="off" />
+                                <div class="subjectError text-danger"></div>
                             </div>
                             <div class="form-group">
                                 <label for="name">Message</label>
-                                <textarea class="form-control" name="message" rows="10" data-rule="required" data-msg="Please write something for us"></textarea>
-                                <div class="validate"></div>
+                                <textarea class="form-control" id="message" name="message" rows="10" autocomplete="off"></textarea>
+                                <div class="messageError text-danger"></div>
                             </div>
-                            <div class="mb-3">
-                                <div class="loading">Loading</div>
-                                <div class="error-message"></div>
-                                <div class="sent-message">Your message has been sent. Thank you!</div>
-                            </div>
-                            <div class="text-center"><button type="submit">Send Message</button></div>
+                            <div class="text-center"><button id="sendMessageBtn" type="submit">Send Message</button></div>
                         </form>
                     </div>
 
@@ -414,6 +418,109 @@
     <!-- Template Main JS File -->
     <script src="assets/js/main.js"></script>
 
+    <!-- Jquery Validator -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.js"></script>
+
+    <!-- Contact Js -->
+    <!-- <script src="js/homepage/contact.js"></script> -->
+    <script>
+        $(document).ready(function() {
+
+            $("#contactForm").validate({
+
+                rules: {
+                    name: {
+                        required: true,
+                        minlength: 3
+                    },
+                    email: {
+                        required: true,
+                        email: true
+                    },
+                    subject: {
+                        required: true
+                    },
+                    message: {
+                        required: true
+                    }
+                },
+                messages: {
+                    name: {
+                        required: "Name is required",
+                        minlength: "Please enter at least 3 characters"
+                    },
+                    email: {
+                        required: "Email is required",
+                        email: "Please enter a valid email"
+                    },
+                    subject: {
+                        required: "Subject is required"
+                    },
+                    message: {
+                        required: "Message is required"
+                    }
+                }
+
+            });
+
+            var contactForm = $("#contactForm");
+
+            contactForm.on("submit", function(e) {
+
+                e.preventDefault();
+
+                var name = $("#name").val();
+                var email = $("#email").val();
+                var subject = $("#subject").val();
+                var message = $("#message").val();
+
+                var nameErr = ["Name is required", "Please enter at least 3 characters", "Name is not valid"];
+                var emailErr = ["Email is required", "Please enter a valid email"];
+                var subjectErr = ["Subject is required"];
+                var messageErr = ["Message is required"];
+
+                if (name && email && subject && message) {
+
+                    $.ajax({
+                        url: "http://localhost/lm/api/sendcontact.php",
+                        method: "POST",
+                        data: {
+                            name: name,
+                            email: email,
+                            subject: subject,
+                            message: message,
+                        },
+                        success: function(response) {
+
+                            if ($.inArray(response, nameErr) != -1) {
+                                $(".nameError").html(response);
+                            }
+
+                            if ($.inArray(response, emailErr) != -1) {
+                                $(".emailError").html(response);
+                            }
+
+                            if ($.inArray(response, subjectErr) != -1) {
+                                $(".subjectError").html(response);
+                            }
+
+                            if ($.inArray(response, messageErr) != -1) {
+                                $(".messageError").html(response);
+                            }
+
+                            $("#ajaxResult").html(response);
+                            $("#name").val("");
+                            $("#email").val("");
+                            $("#subject").val("");
+                            $("#message").val("");
+                        }
+                    });
+                }
+
+            });
+
+        })
+    </script>
 </body>
 
 </html>
