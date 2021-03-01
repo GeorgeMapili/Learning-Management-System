@@ -27,6 +27,11 @@
 
     <!-- Template Main CSS File -->
     <link href="assets/css/style.css" rel="stylesheet">
+    <style>
+        .error {
+            color: red;
+        }
+    </style>
 </head>
 
 <body>
@@ -56,47 +61,51 @@
         <div class="container">
             <div data-aos="fade-up" id="contact" class="contact">
                 <h1 class="text-center my-3">Register</h1>
-                <form class="info">
+                <form class="register_form" id="student_register_form" enctype="multipart/form-data">
+                    <div class="registerResult">
+                    </div>
                     <div class="row">
                         <div class="col">
                             <div class="mb-3">
-                                <label for="exampleInputEmail1" class="form-label">First Name</label>
-                                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                <label for="fname" class="form-label">First Name</label>
+                                <input type="text" class="form-control" name="fname" id="fname">
                             </div>
                         </div>
                         <div class="col">
                             <div class="mb-3">
-                                <label for="exampleInputEmail1" class="form-label">Last Name</label>
-                                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                <label for="lname" class="form-label">Last Name</label>
+                                <input type="text" class="form-control" name="lname" id="lname">
                             </div>
                         </div>
                     </div>
                     <div class="mb-3">
-                        <label for="exampleInputEmail1" class="form-label">Email address</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                        <label for="email_address" class="form-label">Email address</label>
+                        <input type="email" class="form-control" name="email_address" id="email_address">
                     </div>
                     <div class="mb-3">
-                        <label for="exampleInputPassword1" class="form-label">Password</label>
-                        <input type="password" class="form-control" id="exampleInputPassword1">
+                        <label for="password" class="form-label">Password</label>
+                        <input type="password" class="form-control" name="password" id="password">
                     </div>
-
                     <div class="mb-3">
-                        <label for="exampleInputPassword1" class="form-label">Birthday</label>
-                        <input type="date" class="form-control" id="exampleInputPassword1">
+                        <label for="confirm_password" class="form-label">Confirm Password</label>
+                        <input type="password" class="form-control" name="confirm_password" id="confirm_password">
                     </div>
-
                     <div class="mb-3">
-                        <label for="exampleInputPassword1" class="form-label">Gender</label>
-                        <select class="form-control" name="gender" id="">
+                        <label for="birthday" class="form-label">Birthday</label>
+                        <input type="date" class="form-control" name="birthday" id="birthday">
+                    </div>
+                    <div class="mb-3">
+                        <label for="gender" class="form-label">Gender</label>
+                        <select class="form-control" name="gender" id="gender">
                             <option value="">Select a gender</option>
-                            <option value="">Male</option>
-                            <option value="">Female</option>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
                         </select>
                     </div>
 
                     <div class="mb-3">
-                        <label for="exampleInputPassword1" class="form-label">Profile Image</label>
-                        <input type="file" class="form-control" id="exampleInputPassword1">
+                        <label for="profile" class="form-label">Profile Image</label>
+                        <input type="file" class="form-control" name="profile" id="profile">
                     </div>
 
                     <div class="text-center ">
@@ -107,12 +116,6 @@
         </div>
 
     </section><!-- End Hero -->
-
-    <main id="main">
-
-
-
-    </main><!-- End #main -->
 
     <!-- ======= Footer ======= -->
     <footer id="footer">
@@ -139,6 +142,18 @@
     <!-- Template Main JS File -->
     <script src="assets/js/main.js"></script>
 
+    <!-- Jquery Validator -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.js"></script>
+    <!-- Jquery extension validator -->
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.js"></script>
+
+    <!-- Jquery File -->
+    <script src="js/js/vendor/jquery.ui.widget.js"></script>
+    <script src="js/js/jquery.iframe-transport.js"></script>
+    <script src="js/js/jquery.fileupload.js"></script>
+
+    <!-- Register Js -->
+    <script src="js/register_student.js"></script>
 </body>
 
 </html>

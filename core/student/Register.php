@@ -19,6 +19,8 @@ class Register
     public $birthday;
     public $gender;
     public $profile;
+    public $profile_size;
+    public $profile_type;
 
     public function __construct($db)
     {

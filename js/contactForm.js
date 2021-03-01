@@ -1,1 +1,111 @@
-var _0x4017=["\x4E\x61\x6D\x65\x20\x69\x73\x20\x72\x65\x71\x75\x69\x72\x65\x64","\x50\x6C\x65\x61\x73\x65\x20\x65\x6E\x74\x65\x72\x20\x61\x74\x20\x6C\x65\x61\x73\x74\x20\x33\x20\x63\x68\x61\x72\x61\x63\x74\x65\x72\x73","\x45\x6D\x61\x69\x6C\x20\x69\x73\x20\x72\x65\x71\x75\x69\x72\x65\x64","\x50\x6C\x65\x61\x73\x65\x20\x65\x6E\x74\x65\x72\x20\x61\x20\x76\x61\x6C\x69\x64\x20\x65\x6D\x61\x69\x6C","\x53\x75\x62\x6A\x65\x63\x74\x20\x69\x73\x20\x72\x65\x71\x75\x69\x72\x65\x64","\x4D\x65\x73\x73\x61\x67\x65\x20\x69\x73\x20\x72\x65\x71\x75\x69\x72\x65\x64","\x76\x61\x6C\x69\x64\x61\x74\x65","\x23\x63\x6F\x6E\x74\x61\x63\x74\x46\x6F\x72\x6D","\x73\x75\x62\x6D\x69\x74","\x70\x72\x65\x76\x65\x6E\x74\x44\x65\x66\x61\x75\x6C\x74","\x76\x61\x6C","\x23\x6E\x61\x6D\x65","\x23\x65\x6D\x61\x69\x6C","\x23\x73\x75\x62\x6A\x65\x63\x74","\x23\x6D\x65\x73\x73\x61\x67\x65","\x4E\x61\x6D\x65\x20\x69\x73\x20\x6E\x6F\x74\x20\x76\x61\x6C\x69\x64","\x68\x74\x74\x70\x3A\x2F\x2F\x6C\x6F\x63\x61\x6C\x68\x6F\x73\x74\x2F\x6C\x6D\x2F\x61\x70\x69\x2F\x73\x65\x6E\x64\x63\x6F\x6E\x74\x61\x63\x74\x2E\x70\x68\x70","\x50\x4F\x53\x54","\x69\x6E\x41\x72\x72\x61\x79","\x68\x74\x6D\x6C","\x2E\x6E\x61\x6D\x65\x45\x72\x72\x6F\x72","\x2E\x65\x6D\x61\x69\x6C\x45\x72\x72\x6F\x72","\x2E\x73\x75\x62\x6A\x65\x63\x74\x45\x72\x72\x6F\x72","\x2E\x6D\x65\x73\x73\x61\x67\x65\x45\x72\x72\x6F\x72","\x23\x61\x6A\x61\x78\x52\x65\x73\x75\x6C\x74","","\x61\x6A\x61\x78","\x6F\x6E","\x72\x65\x61\x64\x79"];$(document)[_0x4017[28]](function(){$(_0x4017[7])[_0x4017[6]]({rules:{name:{required:true,minlength:3},email:{required:true,email:true},subject:{required:true},message:{required:true}},messages:{name:{required:_0x4017[0],minlength:_0x4017[1]},email:{required:_0x4017[2],email:_0x4017[3]},subject:{required:_0x4017[4]},message:{required:_0x4017[5]}}});var _0xe005x1=$(_0x4017[7]);_0xe005x1[_0x4017[27]](_0x4017[8],function(_0xe005x2){_0xe005x2[_0x4017[9]]();var _0xe005x3=$(_0x4017[11])[_0x4017[10]]();var _0xe005x4=$(_0x4017[12])[_0x4017[10]]();var _0xe005x5=$(_0x4017[13])[_0x4017[10]]();var _0xe005x6=$(_0x4017[14])[_0x4017[10]]();var _0xe005x7=[_0x4017[0],_0x4017[1],_0x4017[15]];var _0xe005x8=[_0x4017[2],_0x4017[3]];var _0xe005x9=[_0x4017[4]];var _0xe005xa=[_0x4017[5]];if(_0xe005x3&& _0xe005x4&& _0xe005x5&& _0xe005x6){$[_0x4017[26]]({url:_0x4017[16],method:_0x4017[17],data:{name:_0xe005x3,email:_0xe005x4,subject:_0xe005x5,message:_0xe005x6},success:function(_0xe005xb){if($[_0x4017[18]](_0xe005xb,_0xe005x7)!=  -1){$(_0x4017[20])[_0x4017[19]](_0xe005xb)};if($[_0x4017[18]](_0xe005xb,_0xe005x8)!=  -1){$(_0x4017[21])[_0x4017[19]](_0xe005xb)};if($[_0x4017[18]](_0xe005xb,_0xe005x9)!=  -1){$(_0x4017[22])[_0x4017[19]](_0xe005xb)};if($[_0x4017[18]](_0xe005xb,_0xe005xa)!=  -1){$(_0x4017[23])[_0x4017[19]](_0xe005xb)};$(_0x4017[24])[_0x4017[19]](_0xe005xb);$(_0x4017[11])[_0x4017[10]](_0x4017[25]);$(_0x4017[12])[_0x4017[10]](_0x4017[25]);$(_0x4017[13])[_0x4017[10]](_0x4017[25]);$(_0x4017[14])[_0x4017[10]](_0x4017[25])}})}})})
+$(document).ready(function() {
+
+    $.validator.addMethod("textOnly",
+        function (value, element) {
+
+            var numArray = 
+                ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
+            var containsNumber = false;
+            
+            $.each(value.split(''), function () {
+                if (numArray.indexOf($(this)[0]) > -1) {
+                    containsNumber = true;
+                    return false;
+                }
+            });
+            
+            return !containsNumber;
+        }
+       );
+
+    $("#contactForm").validate({
+
+        rules: {
+            name: {
+                required: true,
+                minlength: 3,
+                textOnly: true
+            },
+            email: {
+                required: true,
+                email: true
+            },
+            subject: {
+                required: true
+            },
+            message: {
+                required: true
+            }
+        },
+        messages: {
+            name: {
+                required: "Name is required!",
+                minlength: "Please enter at least 3 characters!",
+                textOnly: "Please enter a valid name!"
+            },
+            email: {
+                required: "Email is required!",
+                email: "Please enter a valid email!"
+            },
+            subject: {
+                required: "Subject is required!"
+            },
+            message: {
+                required: "Message is required!"
+            }
+        }
+
+    });
+
+    var contactForm = $("#contactForm");
+
+    contactForm.on("submit", function(e) {
+
+        e.preventDefault();
+
+        var name = $("#name").val();
+        var email = $("#email").val();
+        var subject = $("#subject").val();
+        var message = $("#message").val();
+
+        var nameErr = ["Name is required", "Please enter at least 3 characters", "Name is not valid"];
+        var emailErr = ["Email is required", "Please enter a valid email"];
+        var subjectErr = ["Subject is required"];
+        var messageErr = ["Message is required"];
+
+        if (name && email && subject && message) {
+
+            $.ajax({
+                url: "http://localhost/lm/api/sendcontact.php",
+                method: "POST",
+                data: {
+                    name: name,
+                    email: email,
+                    subject: subject,
+                    message: message,
+                },
+                success: function(response) {
+
+                    if ($.inArray(response, nameErr) != -1) {
+                        $(".nameError").html(response);
+                    }else if ($.inArray(response, emailErr) != -1) {
+                        $(".emailError").html(response);
+                    }else if ($.inArray(response, subjectErr) != -1) {
+                        $(".subjectError").html(response);
+                    }else if ($.inArray(response, messageErr) != -1) {
+                        $(".messageError").html(response);
+                    }else{
+                        $("#ajaxResult").html(response);
+                    }
+                    
+                    $("#name").val("");
+                    $("#email").val("");
+                    $("#subject").val("");
+                    $("#message").val("");
+                }
+            });
+        }
+
+    });
+
+})

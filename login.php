@@ -58,8 +58,8 @@
                 <h1 class="text-center my-3">Login</h1>
                 <form class="info">
                     <div class="mb-3">
-                        <label for="exampleInputEmail1" class="form-label">Email address</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                        <label for="email_address" class="form-label">Email address</label>
+                        <input type="email" class="form-control" id="email_address" id="email_address">
                     </div>
                     <div class="mb-3">
                         <label for="exampleInputPassword1" class="form-label">Password</label>
