@@ -27,6 +27,13 @@
 
     <!-- Template Main CSS File -->
     <link href="assets/css/style.css" rel="stylesheet">
+
+    <style>
+        .error {
+            color: red;
+        }
+    </style>
+
 </head>
 
 <body>
@@ -54,16 +61,17 @@
     <section id="heros">
 
         <div class="container">
-            <div data-aos="fade-up" id="contact" class="contact">
+            <div data-aos="fade-up">
                 <h1 class="text-center my-3">Login</h1>
-                <form class="info">
+                <form class="info" id="login_form_student" class="login_form_student">
+                <div class="loginResult"></div>
                     <div class="mb-3">
                         <label for="email_address" class="form-label">Email address</label>
-                        <input type="email" class="form-control" id="email_address" id="email_address">
+                        <input type="email" class="form-control" name="email" id="email_address">
                     </div>
                     <div class="mb-3">
-                        <label for="exampleInputPassword1" class="form-label">Password</label>
-                        <input type="password" class="form-control" id="exampleInputPassword1">
+                        <label for="password" class="form-label">Password</label>
+                        <input type="password" class="form-control" name="password" id="password">
                     </div>
                     <div class="text-center ">
                         <button type="submit" class="btn btn-info btn-block">Submit</button>
@@ -107,6 +115,12 @@
 
     <!-- Template Main JS File -->
     <script src="assets/js/main.js"></script>
+
+    <!-- Jquery Validator -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.js"></script>
+
+    <!-- Custom js -->
+    <script src="js/login_student.js"></script>
 
 </body>
 

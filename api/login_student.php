@@ -15,14 +15,17 @@ $dbconn = $database->connect();
 
 $student = new Login($dbconn);
 
-$student->email_address = trim(htmlspecialchars($_POST['email_address']));
+$student->email_address = trim(htmlspecialchars($_POST['email']));
 $student->password = trim(htmlspecialchars($_POST['password']));
 
+$default = '<div class="alert alert-success alert-dismissible fade show" role="alert"><strong>Successfully Login!</strong><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>';
+
+$data['default'] = $default;
+
 if ($studLog = $student->loginStudent()) {
-
-    echo "Success Login!";
-
-    header("Refresh:1;url = http://localhost/lm/home.php");
+    $data['answer'] = '<div class="alert alert-success alert-dismissible fade show" role="alert"><strong>Successfully Login!</strong><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>';
 } else {
-    echo "Failed to Login!";
+    $data['answer'] = '<div class="alert alert-danger alert-dismissible fade show" role="alert"><strong>Incorrect Credentials!</strong><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>';
 }
+
+echo json_encode($data);
