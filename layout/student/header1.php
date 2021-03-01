@@ -1,3 +1,6 @@
+<?php
+require_once("layout/php_header/student_header.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
 

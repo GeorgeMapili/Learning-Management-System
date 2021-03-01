@@ -1,3 +1,4 @@
+<?php require_once("layout/php_header/home_header.php") ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -64,7 +65,7 @@
             <div data-aos="fade-up">
                 <h1 class="text-center my-3">Login</h1>
                 <form class="info" id="login_form_student" class="login_form_student">
-                <div class="loginResult"></div>
+                    <div class="loginResult"></div>
                     <div class="mb-3">
                         <label for="email_address" class="form-label">Email address</label>
                         <input type="email" class="form-control" name="email" id="email_address">

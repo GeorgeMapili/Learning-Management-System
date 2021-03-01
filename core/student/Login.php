@@ -4,10 +4,7 @@ namespace core\student;
 
 session_start();
 
-// require_once "../../vendor/autoload.php";
-
 use PDO;
-// use config\Database;
 
 class Login
 {
@@ -49,16 +46,3 @@ class Login
         }
     }
 }
-
-// $db = new Database();
-
-// $dbconn = $db->connect();
-
-// $login = new Login($dbconn);
-
-// $login->email_address = "geo@gmail.com";
-// $login->password = "12345";
-
-// $loginStud = $login->loginStudent();
-
-// var_dump($loginStud);

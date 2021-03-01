@@ -1,3 +1,4 @@
+<?php require_once("layout/php_header/home_header.php") ?>
 <!DOCTYPE html>
 <html lang="en">
 

@@ -1,5 +1,4 @@
 <?php require_once('layout/student/header1.php') ?>
-
 <!-- ======= Hero Section ======= -->
 <section>
 
@@ -109,16 +108,6 @@
 
 </section>
 <!-- End Hero -->
-
-<!-- ======= Footer ======= -->
-<!-- <footer id="footer">
-        <div class="container footer footer-bottom clearfix text-center">
-            <div class="copyright">
-                &copy; Copyright <strong><span>NORSU</span></strong> | <?php echo date('Y'); ?>
-            </div>
-        </div>
-    </footer> -->
-<!-- End Footer -->
 
 <!-- Vendor JS Files -->
 <script src="assets/vendor/jquery/jquery.min.js"></script>
