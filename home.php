@@ -33,76 +33,7 @@
             </div>
         </div>
 
-        <div class="row">
-
-            <div class="col-sm-12 col-md-4 col-lg-3 my-3">
-                <a href="main.php">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title text-center">BSCS I</h5>
-                            <p>Mr. Test Name</p>
-                        </div>
-                    </div>
-                </a>
-            </div>
-
-
-            <div class="col-sm-12 col-md-4 col-lg-3 my-3">
-                <a href="main.php">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title text-center">BSCS I</h5>
-                            <p>Mr. Test Name</p>
-                        </div>
-                    </div>
-                </a>
-            </div>
-
-            <div class="col-sm-12 col-md-4 col-lg-3 my-3">
-                <a href="main.php">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title text-center">BSCS I</h5>
-                            <p>Mr. Test Name</p>
-                        </div>
-                    </div>
-                </a>
-            </div>
-
-            <div class="col-sm-12 col-md-4 col-lg-3 my-3">
-                <a href="main.php">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title text-center">BSCS I</h5>
-                            <p>Mr. Test Name</p>
-                        </div>
-                    </div>
-                </a>
-            </div>
-
-            <div class="col-sm-12 col-md-4 col-lg-3 my-3">
-                <a href="main.php">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title text-center">BSCS I</h5>
-                            <p>Mr. Test Name</p>
-                        </div>
-                    </div>
-                </a>
-            </div>
-
-            <div class="col-sm-12 col-md-4 col-lg-3 my-3">
-                <a href="main.php">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title text-center">BSCS I</h5>
-                            <p>Mr. Test Name</p>
-                        </div>
-                    </div>
-                </a>
-            </div>
-
-        </div>
+        <div class="row"></div>
 
     </div>
 
@@ -123,6 +54,8 @@
 <!-- Template Main JS File -->
 <script src="assets/js/main.js"></script>
 
+<!-- Jquery File -->
+<script src="js/home.js"></script>
 </body>
 
 </html>

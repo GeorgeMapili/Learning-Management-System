@@ -33,6 +33,7 @@ class Login
 
                 if (password_verify($this->password, $studentUser['student_password'])) {
 
+                    $_SESSION['id'] = $studentUser['student_id'];
                     $_SESSION['fname'] = $studentUser['student_fname'];
                     $_SESSION['lname'] = $studentUser['student_lname'];
                     $_SESSION['email'] = $studentUser['student_email'];
