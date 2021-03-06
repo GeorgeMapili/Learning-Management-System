@@ -65,7 +65,7 @@
 
             </nav>
 
-            <a href="login.php" class="get-started-btn scrollto">Logout</a>
+            <a href="logout.php" class="get-started-btn scrollto">Logout</a>
 
         </div>
     </header><!-- End Header -->

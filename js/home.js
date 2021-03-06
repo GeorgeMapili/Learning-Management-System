@@ -13,8 +13,10 @@ $(document).ready(function(){
         
         for(var i=0;i<response.body.length;i++){
 
+            var classIds =response.body[i].class_id;
+
             var div1 = $("<div>", {"class": "col-sm-12 col-md-4 col-lg-3 my-3"});
-            var a = $("<a>", {"href": "main.php"});
+            var a = $("<a>", {"href": `main.php?id=${classIds}`});
             var div2 = $("<div>", {"class": "card"});
             var div3 = $("<div>", {"class": "card-body"});
             var h5 = $("<h5>", {"class": "card-title text-center"});
@@ -33,5 +35,32 @@ $(document).ready(function(){
         }
 
     }
+
+    $(".joinClass").on("submit",function(e){
+        e.preventDefault();
+
+        var classCode = $("#classCode").val();
+
+        $.ajax({
+            url: "http://localhost/lm/api/join_class.php",
+            method: "POST",
+            data: {
+                class_code: classCode
+            },
+            success: function(response){
+                $(".codeResult").html(response);
+                
+                // Reload the classes
+                $.ajax({
+                    url: "http://localhost/lm/api/home.php",
+                    success: function(response){
+                        $(".row").html("");
+                        createElements(response);
+                    }
+                });
+            }
+        });
+
+    });
 
 });

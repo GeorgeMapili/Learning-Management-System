@@ -148,7 +148,7 @@
     <!-- Jquery extension validator -->
     <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.js"></script>
 
-    <!-- Jquery File -->
+    <!-- Jquery File Validation -->
     <script src="js/js/vendor/jquery.ui.widget.js"></script>
     <script src="js/js/jquery.iframe-transport.js"></script>
     <script src="js/js/jquery.fileupload.js"></script>
