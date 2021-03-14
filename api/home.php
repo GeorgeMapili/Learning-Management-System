@@ -29,6 +29,6 @@ if ($stud_count > 0) {
     }
     echo json_encode($studentArr);
 } else {
-    http_response_code(404);
+    // http_response_code(404);
     echo json_encode(array("message" => "No class found."));
 }

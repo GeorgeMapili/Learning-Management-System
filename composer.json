@@ -6,12 +6,15 @@
             "email": "georgemapili322@gmail.com"
         }
     ],
-    "require": {},
+    "require": {
+        "cboden/ratchet": "^0.4.3"
+    },
     "autoload": {
         "psr-4": {
             "config\\": "config",
             "core\\": "core",
-            "helper\\": "helper"
+            "helper\\": "helper",
+            "MyApp\\": "src"
         }
     }
 }

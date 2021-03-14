@@ -5,6 +5,8 @@ namespace config;
 use PDO;
 use PDOException;
 
+date_default_timezone_set("Asia/Manila");
+
 class Database
 {
 

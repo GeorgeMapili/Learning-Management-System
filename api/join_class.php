@@ -18,7 +18,7 @@ $dbconn = $database->connect();
 $homepage = new Home($dbconn);
 
 // Class code
-$classcode = $homepage->class_code = $_POST['class_code'];
+$classcode = $homepage->class_code = trim(htmlspecialchars($_POST['class_code']));
 $homepage->studentId = $_SESSION['id'];
 $homepage->student_name = $_SESSION['fname'] . " " . $_SESSION['lname'];
 
