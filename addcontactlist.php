@@ -73,6 +73,21 @@ if (!isset($_GET['id']) && !isset($_GET['userid'])) {
     // Add the contact added person reverse
 
     // Get the reverse name and image
+
+    // Check if the the users is already added it
+    $sql = "SELECT * FROM contact_lists WHERE contact_user_id = :user_id AND contact_add_id = :add_id";
+    $stmt = $dbconn->prepare($sql);
+    $stmt->bindParam(":user_id", $add_contact_id, PDO::PARAM_INT);
+    $stmt->bindParam(":add_id", $user_id, PDO::PARAM_INT);
+    $stmt->execute();
+
+    $reverseCount = $stmt->rowCount();
+
+    if ($reverseCount > 0) {
+        header("location:message.php");
+        exit;
+    }
+
     $sql = "SELECT * FROM students WHERE student_id = :student_id";
     $stmt = $dbconn->prepare($sql);
     $stmt->bindParam(":student_id", $user_id, PDO::PARAM_INT);

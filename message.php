@@ -421,6 +421,19 @@
                 });
                 name.html(element.contact_add_name);
 
+                var div2 = $("<div>", {
+                    "class": "d-flex align-items-start"
+                });
+
+                var a1 = $("<a>", {
+                    "class": "dropdown-item",
+                    "href": `deletecontact.php?delete_user_id=${element.contact_user_id}&delete_add_id=${element.contact_add_id}`
+                });
+
+                a1.html("<small class='text-danger'>Delete</small>");
+
+                div2.append(a1);
+
                 div1.append(img);
                 p.append(name);
 
@@ -430,8 +443,9 @@
                 a.append(li);
 
                 users.append(a);
+                users.append(div2);
 
-                // console.log(element);
+                console.log(element);
             });
 
         }
