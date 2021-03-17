@@ -21,6 +21,7 @@ class Register
     public $profile;
     public $profile_size;
     public $profile_type;
+    public $fullname;
 
     public function __construct($db)
     {
@@ -50,11 +51,15 @@ class Register
         $this->gender = trim(htmlspecialchars($this->gender, ENT_QUOTES, 'UTF-8'));
         $this->profile = trim(htmlspecialchars($this->profile, ENT_QUOTES, 'UTF-8'));
 
-        $sql = "INSERT INTO students(student_id,student_fname,student_lname,student_email,student_password,student_birthday,student_gender,student_image)VALUES(:id,:fname,:lname,:email,:password,:birthday,:gender,:image)";
+        // full name
+        $this->fullname = $this->fname . " " . $this->lname;
+
+        $sql = "INSERT INTO students(student_id,student_fname,student_lname,student_fullname,student_email,student_password,student_birthday,student_gender,student_image)VALUES(:id,:fname,:lname,:fullname,:email,:password,:birthday,:gender,:image)";
         $stmt = $this->db->prepare($sql);
         $stmt->bindParam(":id", $this->id, PDO::PARAM_INT);
         $stmt->bindParam(":fname", $this->fname, PDO::PARAM_STR);
         $stmt->bindParam(":lname", $this->lname, PDO::PARAM_STR);
+        $stmt->bindParam(":fullname", $this->fullname, PDO::PARAM_STR);
         $stmt->bindParam(":email", $this->email, PDO::PARAM_STR);
         $stmt->bindParam(":password", $this->password, PDO::PARAM_STR);
         $stmt->bindParam(":birthday", $this->birthday, PDO::PARAM_STR);

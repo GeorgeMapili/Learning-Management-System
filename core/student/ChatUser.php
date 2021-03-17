@@ -2,10 +2,7 @@
 
 namespace core\student;
 
-// require_once("../../vendor/autoload.php");
-
 use PDO;
-// use config\Database;
 
 class ChatUser
 {
@@ -60,8 +57,6 @@ class ChatUser
 
         $arr = array();
 
-        // Get the receiver image
-        
         while($row = $stmt->fetch(PDO::FETCH_ASSOC)){
             $arr[] = $row;
         }
@@ -71,18 +66,3 @@ class ChatUser
     }
 
 }
-
-// $db = new Database();
-// $dbcon = $db->connect();
-
-// $chatuser = new ChatUser($dbcon);
-
-// $chatuser->chat_sender_id = 20210237610826;
-// $chatuser->chat_receiver_id = 999;
-// $chatuser->chat_user_message = "Test Message123";
-// $chatuser->chat_created = "March 14, 2021 1:47 pm";
-// $res = $chatuser->getData();
-// $res = $chatuser->getChat();
-
-// var_dump(json_encode($res));
-// die;
