@@ -6,21 +6,21 @@
     <h1 class="text-center">BSCS I</h1>
     <div class="row justify-content-between my-3 mx-2">
         <div class="col-lg-3 col-md-12 col-sm-12 shadow-lg p-3 mb-5 bg-white rounded" style="height:30vh; background: rgb(189, 187, 187);">
-            <div style="height: 100px; width:100px; margin: 0 auto;" class="mt-2 text-center">
-                <img src="assets/img/directors/perfecto.jpg" class="img-thumbnail" alt="">
+            <div style="height: 100px; width:100px; margin: 0 auto;" class="mt-2 text-center" id="student_img">
+                <!-- <img src="assets/img/directors/perfecto.jpg" class="img-thumbnail" alt=""> -->
             </div>
-            <div class="text-center">
-                <h5>Test Name</h5>
-            </div>
+            <div class="text-center" id="student_name"></div>
             <div class="text-center">
                 <a href="">View Profile</a>
             </div>
         </div>
         <div class="col-lg-5 col-md-12 col-sm-12 h-75 shadow-lg p-3 mb-5 bg-white rounded" style="min-height: 35vh; background: rgb(189, 187, 187);">
-            <textarea name="" class="form-control" id="" cols="10" rows="4" placeholder="Start a discussion..."></textarea>
-            <div class="mt-4 text-right">
-                <button class="get-started-btn scrollto text-dark">Post</button>
-            </div>
+            <form id="formPost">
+                <textarea name="postsVal" class="form-control" id="postsVal" cols="10" rows="4" placeholder="Start a discussion..."></textarea>
+                <div class="mt-4 text-right">
+                    <button class="btn btn-primary" type="submit" id="postsBtn">Post</button>
+                </div>
+            </form>
         </div>
         <div class="col-lg-3 col-md-12 col-sm-12 shadow-lg p-3 mb-5 bg-white rounded" style="max-height: 50vh; background: rgb(189, 187, 187);">
             <h5 class="mt-1">Task list</h5>
@@ -205,6 +205,82 @@
 
 <!-- Template Main JS File -->
 <script src="assets/js/main.js"></script>
+<script src="js/autobahn.js"></script>
+
+<script>
+    var conn = new ab.Session('ws://localhost:8080',
+        function() {
+            conn.subscribe('feed', function(topic, data) {
+                // This is where you would add the new article to the DOM (beyond the scope of this tutorial)
+                // console.log('New article published to category "' + topic + '" : ' + data.fullname);
+                console.log(data);
+            });
+        },
+        function() {
+            console.warn('WebSocket connection closed');
+        }, {
+            'skipSubprotocolCheck': true
+        }
+    );
+
+
+    // Get the users information like id,name,etc.
+    $.ajax({
+        url: "http://localhost/lm/api/main_data.php",
+        success: function(response) {
+            console.log(response);
+
+            var id_student = response.id_student;
+            var fname_student = response.fname_student;
+            var lname_student = response.lname_student;
+            var img_student = "assets/img/students/" + response.img_student;
+            var email_student = response.email_student;
+
+            var student_name = $("#student_name");
+            var student_img = $("#student_img");
+
+            student_name.html(`${fname_student} ${lname_student}`);
+
+            var img = $("<img>", {
+                "src": img_student,
+                "class": "img-thumbnail"
+            });
+
+            student_img.append(img);
+
+
+            // Get the class id
+            var classId = new URLSearchParams(window.location.search);
+            var classid = classId.get('id');
+
+            var fullname = `${fname_student} ${lname_student}`;
+
+            $("#formPost").on('submit', function(e) {
+
+                e.preventDefault();
+
+                // Posting
+                var postsContent = $("#postsVal").val();
+
+                $.ajax({
+                    url: "http://localhost/lm/api/posts.php",
+                    method: "POST",
+                    data: {
+                        postsContent: postsContent,
+                        classid: classid,
+                        fullname: fullname
+
+                    },
+                    success: function(response) {
+                        console.log(response);
+                    }
+                });
+
+            });
+
+        }
+    });
+</script>
 
 </body>
 
