@@ -3,7 +3,7 @@
 
 <div class="container">
     <section></section>
-    <h1 class="text-center">BSCS I</h1>
+    <h1 class="text-center" id="class_title"></h1>
     <div class="row justify-content-between my-3 mx-2">
         <div class="col-lg-3 col-md-12 col-sm-12 shadow-lg p-3 mb-5 bg-white rounded" style="height:30vh; background: rgb(189, 187, 187);">
             <div style="height: 100px; width:100px; margin: 0 auto;" class="mt-2 text-center" id="student_img">
@@ -16,7 +16,7 @@
         </div>
         <div class="col-lg-5 col-md-12 col-sm-12 h-75 shadow-lg p-3 mb-5 bg-white rounded" style="min-height: 35vh; background: rgb(189, 187, 187);">
             <form id="formPost">
-                <textarea name="postsVal" class="form-control" id="postsVal" cols="10" rows="4" placeholder="Start a discussion..."></textarea>
+                <textarea name="postsVal" class="form-control" id="postsVal" cols="10" rows="4" placeholder="Start a discussion..." required></textarea>
                 <div class="mt-4 text-right">
                     <button class="btn btn-primary" type="submit" id="postsBtn">Post</button>
                 </div>
@@ -117,77 +117,9 @@
 <section>
     <div class="container">
         <h2 class="my-1">Posts</h2>
-        <div class="row mb-5">
-            <div class="w-50 h-100 m-auto shadow-lg p-3 mb-5 bg-white rounded" style="min-height: 35vh;background: rgb(189, 187, 187);">
-                <div class="d-flex">
-                    <img style="height: 50px; width:50px;" src="assets/img/directors/perfecto.jpg" alt="..." class="rounded-circle">
-                    <h5 class="ml-2 mt-2">Test Name</h5>
-                    <small class="ml-auto">2020-2-16</small>
-                </div>
-                <div class="d-flex my-2">
-                    <i class="fa fa-ellipsis-h ml-auto" aria-hidden="true" style="cursor:pointer" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <a class="dropdown-item" href="#">Update</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">Delete</a>
-                        </div>
-                    </i>
-                </div>
-                <div class="jumbotron jumbotron-fluid mt-2">
-                    <div class="container">
-                        <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum natus nisi doloribus debitis molestiae nemo repellat, adipisci et eum eligendi magni voluptatibus laudantium exercitationem maiores tempore voluptas vero ab aliquam.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
 
-        <div class="row mb-5">
-            <div class="w-50 h-100 m-auto shadow-lg p-3 mb-5 bg-white rounded" style="min-height: 35vh;background: rgb(189, 187, 187);">
-                <div class="d-flex">
-                    <img style="height: 50px; width:50px;" src="assets/img/directors/perfecto.jpg" alt="..." class="rounded-circle">
-                    <h5 class="ml-2 mt-2">Test Name</h5>
-                    <small class="ml-auto">2020-2-16</small>
-                </div>
-                <div class="d-flex my-2">
-                    <i class="fa fa-ellipsis-h ml-auto" aria-hidden="true" style="cursor:pointer" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <a class="dropdown-item" href="#">Update</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">Delete</a>
-                        </div>
-                    </i>
-                </div>
-                <div class="jumbotron jumbotron-fluid mt-2">
-                    <div class="container">
-                        <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum natus nisi doloribus debitis molestiae nemo repellat, adipisci et eum eligendi magni voluptatibus laudantium exercitationem maiores tempore voluptas vero ab aliquam.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <div id="postsHolder"></div>
 
-        <div class="row mb-5">
-            <div class="w-50 h-100 m-auto shadow-lg p-3 mb-5 bg-white rounded" style="min-height: 35vh;background: rgb(189, 187, 187);">
-                <div class="d-flex">
-                    <img style="height: 50px; width:50px;" src="assets/img/directors/perfecto.jpg" alt="..." class="rounded-circle">
-                    <h5 class="ml-2 mt-2">Test Name</h5>
-                    <small class="ml-auto">2020-2-16</small>
-                </div>
-                <div class="d-flex my-2">
-                    <i class="fa fa-ellipsis-h ml-auto" aria-hidden="true" style="cursor:pointer" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <a class="dropdown-item" href="#">Update</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">Delete</a>
-                        </div>
-                    </i>
-                </div>
-                <div class="jumbotron jumbotron-fluid mt-2">
-                    <div class="container">
-                        <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum natus nisi doloribus debitis molestiae nemo repellat, adipisci et eum eligendi magni voluptatibus laudantium exercitationem maiores tempore voluptas vero ab aliquam.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
     </div>
 </section>
@@ -208,27 +140,177 @@
 <script src="js/autobahn.js"></script>
 
 <script>
-    var conn = new ab.Session('ws://localhost:8080',
-        function() {
-            conn.subscribe('feed', function(topic, data) {
-                // This is where you would add the new article to the DOM (beyond the scope of this tutorial)
-                // console.log('New article published to category "' + topic + '" : ' + data.fullname);
-                console.log(data);
-            });
-        },
-        function() {
-            console.warn('WebSocket connection closed');
-        }, {
-            'skipSubprotocolCheck': true
-        }
-    );
+    var conn = new WebSocket('ws://localhost:8080');
+    conn.onopen = function(e) {
+        console.log("Connection established!");
+    };
+
+    conn.onmessage = function(e) {
+        // console.log(e.data);
+
+        var data = JSON.parse(e.data);
+
+        console.log(data);
+
+        $.ajax({
+            url: "http://localhost/lm/api/main_data.php",
+            success: function(response) {
+                // console.log(response);
+
+                var id_student = response.id_student;
+                var fname_student = response.fname_student;
+                var lname_student = response.lname_student;
+
+                var fullname = `${fname_student} ${lname_student}`;
+
+                var cId = new URLSearchParams(window.location.search);
+                var cid = cId.get('id');
+
+                if(cid === data.classid){
+
+                    var row_5 = $("<div>", {
+                        "class": "row mb-5"
+                    });
+
+                    var w_50 = $("<div>", {
+                        "class": "w-50 h-100 m-auto shadow-lg p-3 mb-3 bg-white rounded",
+                        "style": "min-height: 35vh; background: rgb(189,187,187)"
+                    });
+
+                    // 1st
+
+                    var d_flex1 = $("<div>", {
+                        "class": "d-flex"
+                    });
+
+                    var img = $("<img>", {
+                        "style": "height: 50px; width: 50px;",
+                        "src": data.img,
+                        "class": "rounded-circle"
+                    });
+
+                    var h5 = $("<h5>", {
+                        "class": "ml-2 mt-2"
+                    });
+
+                    h5.html(data.fullname);
+
+                    var small = $("<small>", {
+                        "class": "ml-auto"
+                    });
+
+                    small.html(data.dt);
+
+                    d_flex1.append(img);
+                    d_flex1.append(h5);
+                    d_flex1.append(small);
+
+                    // 2nd
+
+                    // Get the users information like id,name,etc.
+
+                    if(data.fullname === fullname){
+
+                        var d_flex2 = $("<div>", {
+                        "class": "d-flex my-2"
+                        });
+
+                        // Start here the change
+
+                        var button_toggle = $("<button>", {
+                            "type": "button",
+                            "class": "btn btn-sm btn-secondary dropdown-toggle dropdown-toggle-split",
+                            "data-toggle": "dropdown",
+                            "aria-haspopup": "true",
+                            "aria-expanded": "false"
+                        });
+
+                        var span_sr_only = $("<span>", {
+                            "class": "sr-only"
+                        });
+
+                        span_sr_only.html("Toggle Dropdown");
+
+                        button_toggle.append(span_sr_only);
+
+                        var div_dropdown = $("<div>", {
+                            "class": "dropdown-menu"
+                        });
+
+                        var button_class_dropdown_item_update = $("<a>", {
+                            "class": "dropdown-item",
+                            "href": `http://localhost/lm/updateposts.php?class_id=${data.classid}&post_id=${data.postid}`
+                        });
+
+                        button_class_dropdown_item_update.html("Update");
+
+                        var div_dropdown_divider = $("<div>", {
+                            "class": "dropdown-divider"
+                        });
+
+                        var a_class_dropdown_iten_delete = $("<a>", {
+                            "class": "dropdown-item",
+                            "href": `http://localhost/lm/deleteposts.php?class_id=${data.classid}&post_id=${data.postid}`
+                        });
+
+                        a_class_dropdown_iten_delete.html("Delete");
+
+                        div_dropdown.append(button_class_dropdown_item_update);
+                        div_dropdown.append(div_dropdown_divider);
+                        div_dropdown.append(a_class_dropdown_iten_delete);
+
+                        d_flex2.append(div_dropdown);
+
+                        d_flex2.append(button_toggle);
+                        
+                    }
+
+                    // 3rd
+
+                    var div_jumbotron = $("<div>", {
+                        "class": "jumbotron jumbotron-fluid mt-2"
+                    });
+
+                    var div_container = $("<div>", {
+                        "class": "container"
+                    });
+
+                    var p_lead = $("<p>", {
+                        "class": "lead"
+                    });
+
+                    p_lead.html(data.content);
+
+                    div_container.append(p_lead);
+                    div_jumbotron.append(div_container);
+
+                    // Final
+
+                    w_50.append(d_flex1);
+
+                    if(data.fullname === fullname){
+                    w_50.append(d_flex2);
+                    }
+
+                    w_50.append(div_jumbotron);
+
+                    row_5.append(w_50);
+
+                    $("#postsHolder").prepend(row_5);
+
+                }
+
+            }
+        });
+
+    };
 
 
     // Get the users information like id,name,etc.
     $.ajax({
         url: "http://localhost/lm/api/main_data.php",
         success: function(response) {
-            console.log(response);
+            // console.log(response);
 
             var id_student = response.id_student;
             var fname_student = response.fname_student;
@@ -255,12 +337,34 @@
 
             var fullname = `${fname_student} ${lname_student}`;
 
+            // Get the class title
+            $.ajax({
+                url: "http://localhost/lm/api/class_data.php",
+                method: "POST",
+                data: {
+                    classid: classid
+                },
+                success: function(response){
+                    $("#class_title").html(response[0].class_name)
+                }
+            });
+            
+
+            // Post Form
             $("#formPost").on('submit', function(e) {
 
                 e.preventDefault();
 
                 // Posting
                 var postsContent = $("#postsVal").val();
+                var student_img = "assets/img/students/"+ student_img;
+
+                var data = {
+                        postsContent: postsContent,
+                        classid: classid,
+                        fullname: fullname,
+                        student_img: img_student
+                    }
 
                 $.ajax({
                     url: "http://localhost/lm/api/posts.php",
@@ -268,18 +372,195 @@
                     data: {
                         postsContent: postsContent,
                         classid: classid,
-                        fullname: fullname
-
+                        fullname: fullname,
+                        student_img: img_student
                     },
                     success: function(response) {
-                        console.log(response);
+                        // console.log(response);
+
+                        // Port 8080
+                        conn.send(JSON.stringify(response));
                     }
                 });
 
-            });
+                $("#postsVal").val("");
+
+                });
 
         }
+
     });
+
+    // Show all posts
+
+    var classIds = new URLSearchParams(window.location.search);
+    var classids = classIds.get('id');
+
+    $.ajax({
+        url: "http://localhost/lm/api/show_posts.php",
+        method: "POST",
+        data: {
+            classids: classids
+        },
+        success: function(response){
+            // console.log(response);
+
+            response.forEach(element => {
+                // console.log(element);
+
+            $.ajax({
+                url: "http://localhost/lm/api/main_data.php",
+                success: function(response) {
+                    // console.log(response);
+
+                    var id_student = response.id_student;
+                    var fname_student = response.fname_student;
+                    var lname_student = response.lname_student;
+
+                    var fullname = `${fname_student} ${lname_student}`;
+
+                var cId = new URLSearchParams(window.location.search);
+                var cid = cId.get('id');
+
+                if(element.class_id === cid){
+
+                    var row_5 = $("<div>", {
+                    "class": "row mb-5"
+                    });
+
+                    var w_50 = $("<div>", {
+                        "class": "w-50 h-100 m-auto shadow-lg p-3 mb-3 bg-white rounded",
+                        "style": "min-height: 35vh; background: rgb(189,187,187)"
+                    });
+
+                    // 1st
+
+                    var d_flex1 = $("<div>", {
+                        "class": "d-flex"
+                    });
+
+                    var img = $("<img>", {
+                        "style": "height: 50px; width: 50px;",
+                        "src": element.post_img,
+                        "class": "rounded-circle"
+                    });
+
+                    var h5 = $("<h5>", {
+                        "class": "ml-2 mt-2"
+                    });
+
+                    h5.html(element.post_author);
+
+                    var small = $("<small>", {
+                        "class": "ml-auto"
+                    });
+
+                    small.html(element.post_created_at);
+
+                    d_flex1.append(img);
+                    d_flex1.append(h5);
+                    d_flex1.append(small);
+
+                    // 2nd
+
+                    if(element.post_author === fullname){
+
+                        var d_flex2 = $("<div>", {
+                        "class": "d-flex my-2"
+                        });
+
+                        // Start here the change
+
+                        var button_toggle = $("<button>", {
+                            "type": "button",
+                            "class": "btn btn-sm btn-secondary dropdown-toggle dropdown-toggle-split",
+                            "data-toggle": "dropdown",
+                            "aria-haspopup": "true",
+                            "aria-expanded": "false"
+                        });
+
+                        var span_sr_only = $("<span>", {
+                            "class": "sr-only"
+                        });
+
+                        span_sr_only.html("Toggle Dropdown");
+
+                        button_toggle.append(span_sr_only);
+
+                        var div_dropdown = $("<div>", {
+                            "class": "dropdown-menu"
+                        });
+
+                        var button_class_dropdown_item_update = $("<a>", {
+                            "class": "dropdown-item",
+                            "href": `http://localhost/lm/updateposts.php?class_id=${element.class_id}&post_id=${element.post_id}`
+                        });
+
+                        button_class_dropdown_item_update.html("Update");
+
+                        var div_dropdown_divider = $("<div>", {
+                            "class": "dropdown-divider"
+                        });
+
+                        var a_class_dropdown_iten_delete = $("<a>", {
+                            "class": "dropdown-item",
+                            "href": `http://localhost/lm/deleteposts.php?class_id=${element.class_id}&post_id=${element.post_id}`
+                        });
+                        
+                        a_class_dropdown_iten_delete.html("Delete");
+
+                        div_dropdown.append(button_class_dropdown_item_update);
+                        div_dropdown.append(div_dropdown_divider);
+                        div_dropdown.append(a_class_dropdown_iten_delete);
+
+                        d_flex2.append(div_dropdown);
+
+                        d_flex2.append(button_toggle);
+
+                    }
+
+                    // 3rd
+
+                    var div_jumbotron = $("<div>", {
+                        "class": "jumbotron jumbotron-fluid mt-2"
+                    });
+
+                    var div_container = $("<div>", {
+                        "class": "container"
+                    });
+
+                    var p_lead = $("<p>", {
+                        "class": "lead"
+                    });
+
+                    p_lead.html(element.post_body);
+
+                    div_container.append(p_lead);
+                    div_jumbotron.append(div_container);
+
+                    // Final
+
+                    w_50.append(d_flex1);
+
+                    if(element.post_author === fullname){
+                    w_50.append(d_flex2);
+                    }
+
+                    w_50.append(div_jumbotron);
+
+                    row_5.append(w_50);
+
+                    $("#postsHolder").append(row_5);
+
+                }
+
+                }
+            });
+
+            });
+        }
+    });
+
 </script>
 
 </body>

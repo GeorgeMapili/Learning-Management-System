@@ -1,60 +1,58 @@
 <?php
 
 namespace MyApp;
-
+use Ratchet\MessageComponentInterface;
 use Ratchet\ConnectionInterface;
-use Ratchet\Wamp\WampServerInterface;
+use core\student\Posts;
+use config\Database;
 
-class Pusher implements WampServerInterface
-{
-    protected $subscribedTopics = array();
+use DateTime;
+use DateTimeZone;
 
-    public function onSubscribe(ConnectionInterface $conn, $topic) {
-        $this->subscribedTopics[$topic->getId()] = $topic;
-    }
-    
-    public function onUnSubscribe(ConnectionInterface $conn, $topic)
-    {
-    }
+class Pusher implements MessageComponentInterface {
+    protected $clients;
 
-    public function onOpen(ConnectionInterface $conn)
-    {
-    }
-    
-    public function onClose(ConnectionInterface $conn)
-    {
+    public function __construct() {
+        $this->clients = new \SplObjectStorage;
     }
 
-    public function onCall(ConnectionInterface $conn, $id, $topic, array $params)
-    {
-        // In this application if clients send data it's because the user hacked around in console
-        $conn->callError($id, $topic, 'You are not allowed to make calls')->close();
+    public function onOpen(ConnectionInterface $conn) {
+        // Store the new connection to send messages to later
+        $this->clients->attach($conn);
+
+        echo "New connection! ({$conn->resourceId})\n";
     }
 
-    public function onPublish(ConnectionInterface $conn, $topic, $event, array $exclude, array $eligible)
-    {
-        // In this application if clients send data it's because the user hacked around in console
-        $conn->close();
-    }
+    public function onMessage(ConnectionInterface $from, $msg) {
 
-    public function onError(ConnectionInterface $conn, \Exception $e)
-    {
-    }
+        $now = new DateTime();
+        $now->setTimezone(new DateTimeZone('Asia/Manila'));
 
-    /**
-     * @param string JSON'ified string we'll receive from ZeroMQ
-     */
-    public function onBlogEntry($entry) {
-        $entryData = json_decode($entry, true);
+        $numRecv = count($this->clients) - 1;
+        echo sprintf('Connection %d sending message "%s" to %d other connection%s' . "\n"
+            , $from->resourceId, $msg, $numRecv, $numRecv == 1 ? '' : 's');
 
-        // If the lookup topic object isn't set there is no one to publish to
-        if (!array_key_exists($entryData['post'], $this->subscribedTopics)) {
-            return;
+        $data = json_decode($msg, true);
+
+        $data['dt'] = $now->format("F j, Y g:i a");
+
+        foreach ($this->clients as $client) {
+
+            $client->send(json_encode($data));
+
         }
+    }
 
-        $topic = $this->subscribedTopics[$entryData['post']];
+    public function onClose(ConnectionInterface $conn) {
+        // The connection is closed, remove it, as we can no longer send it messages
+        $this->clients->detach($conn);
 
-        // re-send the data to all the clients subscribed to that category
-        $topic->broadcast($entryData);
+        echo "Connection {$conn->resourceId} has disconnected\n";
+    }
+
+    public function onError(ConnectionInterface $conn, \Exception $e) {
+        echo "An error has occurred: {$e->getMessage()}\n";
+
+        $conn->close();
     }
 }
