@@ -10,6 +10,7 @@ class Posts
     public $db;
 
     public $classId;
+    public $postId;
     public $postAuthor;
     public $postImage;
     public $postBody;
@@ -92,6 +93,42 @@ class Posts
         }
 
         return $arr;
+
+    }
+
+    public function updatePost(){
+        $sql = "UPDATE posts SET post_body = :post_body WHERE post_id = :post_id AND class_id = :class_id";
+        $stmt = $this->db->prepare($sql);
+        $stmt->bindParam(":post_body", $this->postBody, PDO::PARAM_STR);
+        $stmt->bindParam(":post_id", $this->postId, PDO::PARAM_INT);
+        $stmt->bindParam(":class_id", $this->classId, PDO::PARAM_INT);
+
+        if($stmt->execute()){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+    public function getSingleContent(){
+        $sql = "SELECT * FROM posts WHERE post_id = :post_id AND class_id = :class_id";
+        $stmt = $this->db->prepare($sql);
+        $stmt->bindParam(":post_id", $this->postId, PDO::PARAM_INT);
+        $stmt->bindParam(":class_id", $this->classId, PDO::PARAM_INT);
+        
+        if($stmt->execute()){
+
+            $arr = array();
+
+            while($result = $stmt->fetch(PDO::FETCH_ASSOC)){
+                $arr[] = $result;
+            }
+
+            return $arr;
+
+        }else{
+            return false;
+        }
 
     }
 

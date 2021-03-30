@@ -1,4 +1,10 @@
 <?php require_once('layout/student/header.php'); ?>
+<?php
+    if(!isset($_GET['id'])){
+        header("location:home.php");
+        exit;
+    }
+?>
 <!-- ======= Hero Section ======= -->
 
 <div class="container">
@@ -22,41 +28,38 @@
                 </div>
             </form>
         </div>
-        <div class="col-lg-3 col-md-12 col-sm-12 shadow-lg p-3 mb-5 bg-white rounded" style="max-height: 50vh; background: rgb(189, 187, 187);">
+        <div class="col-lg-3 col-md-12 col-sm-12 shadow-lg p-3 mb-5 bg-white rounded task_here" style="max-height: 50vh; background: rgb(189, 187, 187);">
             <h5 class="mt-1">Task list</h5>
-            <!-- <textarea name="" id="" cols="10" rows="3" class="form-control" placeholder="..."></textarea> -->
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@fat">
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
                 Add Task
             </button>
 
             <!-- Modal -->
-            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal fade" id="exampleModal">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Task</h5>
+                            <h5 class="modal-title">Task</h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
                         <div class="modal-body">
-                            <form>
+                            <form id="formTask">
                                 <div class="form-group">
                                     <label for="recipient-name" class="col-form-label">Deadline:</label>
-                                    <input type="date" class="form-control" id="recipient-name">
+                                    <input type="date" id="form_deadline" class="form-control" id="recipient-name" required>
                                 </div>
                                 <div class="form-group">
                                     <label for="message-text" class="col-form-label">Title</label>
-                                    <input type="text" class="form-control" placeholder="..." />
+                                    <input type="text" id="form_title" class="form-control" placeholder="..." required/>
                                 </div>
                                 <div class="form-group">
                                     <label for="message-text" class="col-form-label">Body:</label>
-                                    <textarea class="form-control" id="message-text" placeholder="..."></textarea>
+                                    <textarea class="form-control" id="form_body" placeholder="..." required></textarea>
                                 </div>
+                                <button type="submit" class="btn btn-primary">Add</button>
                             </form>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-primary">Add</button>
                         </div>
                     </div>
                 </div>
@@ -64,48 +67,7 @@
 
             <hr>
 
-            <div class="list-group list-group-flush overflow-auto h-50">
-                <li class="list-group-item list-group-item-action bg-light">
-                    <div class="d-flex justify-content-between">
-                        <a href="#">Menu 1</a> <a href="#"><i class="fa fa-pencil" aria-hidden="true"></i></a> <a href="#"><i class="fa fa-trash" aria-hidden="true"></i></a>
-                    </div>
-                </li>
-                <li class="list-group-item list-group-item-action bg-light">
-                    <div class="d-flex justify-content-between">
-                        <a href="#">Menu 1</a> <a href="#"><i class="fa fa-pencil" aria-hidden="true"></i></a> <a href="#"><i class="fa fa-trash" aria-hidden="true"></i></a>
-                    </div>
-                </li>
-                <li class="list-group-item list-group-item-action bg-light">
-                    <div class="d-flex justify-content-between">
-                        <a href="#">Menu 1</a> <a href="#"><i class="fa fa-pencil" aria-hidden="true"></i></a> <a href="#"><i class="fa fa-trash" aria-hidden="true"></i></a>
-                    </div>
-                </li>
-                <li class="list-group-item list-group-item-action bg-light">
-                    <div class="d-flex justify-content-between">
-                        <a href="#">Menu 1</a> <a href="#"><i class="fa fa-pencil" aria-hidden="true"></i></a> <a href="#"><i class="fa fa-trash" aria-hidden="true"></i></a>
-                    </div>
-                </li>
-                <li class="list-group-item list-group-item-action bg-light">
-                    <div class="d-flex justify-content-between">
-                        <a href="#">Menu 1</a> <a href="#"><i class="fa fa-pencil" aria-hidden="true"></i></a> <a href="#"><i class="fa fa-trash" aria-hidden="true"></i></a>
-                    </div>
-                </li>
-                <li class="list-group-item list-group-item-action bg-light">
-                    <div class="d-flex justify-content-between">
-                        <a href="#">Menu 1</a> <a href="#"><i class="fa fa-pencil" aria-hidden="true"></i></a> <a href="#"><i class="fa fa-trash" aria-hidden="true"></i></a>
-                    </div>
-                </li>
-                <li class="list-group-item list-group-item-action bg-light">
-                    <div class="d-flex justify-content-between">
-                        <a href="#">Menu 1</a> <a href="#"><i class="fa fa-pencil" aria-hidden="true"></i></a> <a href="#"><i class="fa fa-trash" aria-hidden="true"></i></a>
-                    </div>
-                </li>
-                <li class="list-group-item list-group-item-action bg-light">
-                    <div class="d-flex justify-content-between">
-                        <a href="#">Menu 1</a> <a href="#"><i class="fa fa-pencil" aria-hidden="true"></i></a> <a href="#"><i class="fa fa-trash" aria-hidden="true"></i></a>
-                    </div>
-                </li>
-            </div>
+            <div class="list-group list-group-flush overflow-auto h-50 task_show"></div>
 
         </div>
     </div>
@@ -212,14 +174,14 @@
                     if(data.fullname === fullname){
 
                         var d_flex2 = $("<div>", {
-                        "class": "d-flex my-2"
+                        "class": "d-flex justify-content-end my-2"
                         });
 
                         // Start here the change
 
                         var button_toggle = $("<button>", {
                             "type": "button",
-                            "class": "btn btn-sm btn-secondary dropdown-toggle dropdown-toggle-split",
+                            "class": "btn btn-sm dropdown-toggle dropdown-toggle-split",
                             "data-toggle": "dropdown",
                             "aria-haspopup": "true",
                             "aria-expanded": "false"
@@ -250,7 +212,8 @@
 
                         var a_class_dropdown_iten_delete = $("<a>", {
                             "class": "dropdown-item",
-                            "href": `http://localhost/lm/deleteposts.php?class_id=${data.classid}&post_id=${data.postid}`
+                            "href": `http://localhost/lm/deleteposts.php?class_id=${data.classid}&post_id=${data.postid}`,
+                            "onclick": `return confirm(\'Are you sure to delete ?\')`
                         });
 
                         a_class_dropdown_iten_delete.html("Delete");
@@ -466,14 +429,14 @@
                     if(element.post_author === fullname){
 
                         var d_flex2 = $("<div>", {
-                        "class": "d-flex my-2"
+                        "class": "d-flex justify-content-end my-2"
                         });
 
                         // Start here the change
 
                         var button_toggle = $("<button>", {
                             "type": "button",
-                            "class": "btn btn-sm btn-secondary dropdown-toggle dropdown-toggle-split",
+                            "class": "btn btn-sm dropdown-toggle dropdown-toggle-split",
                             "data-toggle": "dropdown",
                             "aria-haspopup": "true",
                             "aria-expanded": "false"
@@ -504,7 +467,8 @@
 
                         var a_class_dropdown_iten_delete = $("<a>", {
                             "class": "dropdown-item",
-                            "href": `http://localhost/lm/deleteposts.php?class_id=${element.class_id}&post_id=${element.post_id}`
+                            "href": `http://localhost/lm/deleteposts.php?class_id=${element.class_id}&post_id=${element.post_id}`,
+                            "onclick": `return confirm(\'Are you sure to delete ?\')`
                         });
                         
                         a_class_dropdown_iten_delete.html("Delete");
@@ -558,6 +522,556 @@
             });
 
             });
+        }
+    });
+
+    // Task list
+    
+    $("#formTask").on('submit', function(e){
+
+        e.preventDefault();
+
+        var task_deadline = $("#form_deadline").val();
+        var task_title = $("#form_title").val();
+        var task_body = $("#form_body").val();
+
+        // Nested with the main data API
+
+        $.ajax({
+                url: "http://localhost/lm/api/main_data.php",
+                success: function(response) {
+
+                    var student_id = response.id_student;
+                    var task_author = `${response.fname_student} ${response.lname_student}`;
+
+                    $.ajax({
+                        url: "http://localhost/lm/api/task_list.php",
+                        method: "POST",
+                        data: {
+                            classids: classids,
+                            student_id: student_id,
+                            task_author: task_author,
+                            task_deadline: task_deadline,
+                            task_title: task_title,
+                            task_body: task_body
+                        },
+                        success: function(response1){
+                            console.log(response1);
+
+                        }
+                    });
+
+                    $("#form_deadline").val("");
+                    $("#form_title").val("");
+                    $("#form_body").val("");
+
+                    location.reload();
+                }
+        })
+
+    });
+
+    // Show all the current tasks
+    $.ajax({
+        url: "http://localhost/lm/api/main_data.php",
+        success: function(response) {
+            // console.log(response);
+
+            var student_id = response.id_student;
+
+            $.ajax({
+                url: "http://localhost/lm/api/show_tasks.php",
+                method: "POST",
+                data: {
+                    classids: classids,
+                    student_id: student_id
+                },
+                success: function(response){
+
+                    response.forEach(element => {
+                        console.log(element);
+
+                            var random_number = Math.floor((Math.random() * 3) + 1);
+                            var id_modals = element.task_body.slice(0, random_number);
+
+                            var random_number = Math.floor((Math.random() * 3) + 1);
+                            var id_modals_update = element.task_title.slice(0, random_number) + element.student_id.slice(0,4);
+
+                            var task_list = $("<div>", {
+                                "class": "task_list"
+                            });
+
+                            // List Group
+                            var li_group = $("<li>", {
+                                "class": "list-group-item list-group-item-action bg-light"
+                            })
+
+                            // Div inside li
+                            var div_dflex = $("<div>", {
+                                "class": "d-flex justify-content-between"
+                            });
+
+                            // a view tags
+                            var a_view = $("<a>", {
+                                "href": "#",
+                                "data-toggle": "modal",
+                                "data-target": `#${id_modals}`
+                            })
+
+                            a_view.html(element.task_body.slice(0,7) + "...");
+
+                            // a update tags
+                            var a_update = $("<a>", {
+                                "href": "#",
+                                "data-toggle": "modal",
+                                "data-target": `#${id_modals_update}`
+                            })
+
+                            var i_pencil_update = $("<i>", {
+                                "class": "fa fa-pencil",
+                                "aria-hidden": "true"
+                            });
+
+                            a_update.append(i_pencil_update);
+
+                            var a_delete = $("<a>", {
+                                "href": `deletetask.php?task_id=${element.task_id}&class_id=${element.class_id}`
+                                // "href": "#"
+                            });
+
+                            var i_delete = $("<i>", {
+                                "class": "fa fa-trash",
+                                "aria-hidden": "true"
+                            });
+
+                            a_delete.append(i_delete);
+
+                            // append all the list
+
+                            div_dflex.append(a_view);
+                            div_dflex.append(a_update);
+                            div_dflex.append(a_delete);
+
+                            li_group.append(div_dflex);
+                            task_list.append(li_group);
+
+                            $(".task_show").append(task_list);
+
+                            // MODALS ------------------------------------------------------------------------------------
+
+                            // main head
+                            var modals = $("<div>", {
+                                "class": "modals"
+                            });
+
+                            // modal_fade
+                            var moda_fade = $("<div>", {
+                                "class": "modal fade",
+                                "id": id_modals  //-----------------------
+                            });
+
+                            // modal dialog
+                            var modal_dialog = $("<div>", {
+                                "class": "modal-dialog",
+                                "role": "document"
+                            });
+
+                            // modal-content
+                            var modal_content = $("<div>", {
+                                "class": "modal-content"
+                            })
+
+                            // modal-header HEADER----------------
+                            var modal_header = $("<div>", {
+                                "class": "modal-header"
+                            });
+
+                            // title
+                            var h5_modal_title = $("<h5>", {
+                                "class": "modal-title"
+                            });
+
+                            h5_modal_title.html("Current Task");
+
+                            var button_close = $("<button>", {
+                                "type": "button",
+                                "class": "close",
+                                "data-dismiss": "modal",
+                                "aria-label": "Close"
+                            });
+
+                            var span_x = $("<span>", {
+                                "aria-hidden": "true"
+                            });
+
+                            span_x.html("&times;");
+
+                            button_close.append(span_x);
+
+                            modal_header.append(h5_modal_title);
+                            modal_header.append(button_close);
+
+                            modal_content.append(modal_header);
+
+
+                            // Modal body----------------------------------------------------
+                            var modal_body = $("<div>", {
+                                "class": "modal-body"
+                            });
+
+                            // form
+                            var form_task = $("<form>", {
+                                "class": "formTaskView"
+                            });
+
+                            // class_id
+                            var input_hidden_class_id = $("<input>", {
+                                "type": "hidden",
+                                "class": "class_id_task",
+                                "value": element.class_id
+                            });
+
+                            // task_id
+                            var input_hidden_task_id = $("<input>", {
+                                "type": "hidden",
+                                "class": "task_id_task",
+                                "value": element.task_id
+                            });
+
+                            form_task.append(input_hidden_class_id);
+                            form_task.append(input_hidden_task_id);
+
+                            // form-group1
+                            var form_group1 = $("<div>", {
+                                "class": "form-group"
+                            });
+
+                            var label_deadline = $("<label>", {
+                                "for": "recipient-name",
+                                "class": "col-form-label"
+                            });
+
+                            label_deadline.html("Deadline:");
+
+                            var input_date = $("<input>", {
+                                "type": "text",
+                                "id": "form_deadline",
+                                "value": element.task_deadline,
+                                "class": "form-control",
+                                "id": "recipient-name",
+                                "required": "",
+                                "readonly": ""
+                            });
+
+                            form_group1.append(label_deadline);
+                            form_group1.append(input_date);
+
+                            // form-group2
+                            var form_group2 = $("<div>", {
+                                "class": "form-group"
+                            });
+
+                            var label_title = $("<label>", {
+                                "for": "message-text",
+                                "class": "col-form-label"
+                            });
+
+                            label_title.html("Title:");
+
+                            var input_title = $("<input>", {
+                                "type": "text",
+                                "id": "form_title",
+                                "value": element.task_title,
+                                "class": "form-control",
+                                "required": "",
+                                "readonly": ""
+                            });
+
+                            form_group2.append(label_title);
+                            form_group2.append(input_title);
+
+                            // form-group3
+                            var form_group3 = $("<div>", {
+                                "class": "form-group"
+                            });
+
+                            var label_body = $("<label>", {
+                                "for": "message-text",
+                                "class": "col-form-label"
+                            });
+
+                            label_body.html("Body:");
+
+                            var input_body = $("<textarea>", {
+                                "class": "form-control",
+                                "id": "form_body",
+                                "required": "",
+                                "readonly": ""
+                            });
+
+                            input_body.html(element.task_body);
+
+                            form_group3.append(label_body);
+                            form_group3.append(input_body);
+
+                            // Button done-----------------------
+                            var button_done = $("<button>", {
+                                "type": "submit",
+                                "class": "btn btn-primary"
+                            });
+
+                            button_done.html("Done")
+
+                            form_task.append(form_group1);
+                            form_task.append(form_group2);
+                            form_task.append(form_group3);
+                            form_task.append(button_done);
+
+                            modal_body.append(form_task);
+                            modal_content.append(modal_body);
+
+                            // Overall append
+
+                            modal_dialog.append(modal_content);
+                            moda_fade.append(modal_dialog);
+                            modals.append(moda_fade);
+
+                            task_list.append(modals);
+
+
+                            // FOR UPDATE MODAL !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+                            // MODALS ------------------------------------------------------------------------------------
+
+                            // modal_fade
+                            var moda_fade = $("<div>", {
+                                "class": "modal fade",
+                                "id": id_modals_update  //-----------------------
+                            });
+
+                            // modal dialog
+                            var modal_dialog = $("<div>", {
+                                "class": "modal-dialog",
+                                "role": "document"
+                            });
+
+                            // modal-content
+                            var modal_content = $("<div>", {
+                                "class": "modal-content"
+                            })
+
+                            // modal-header HEADER----------------
+                            var modal_header = $("<div>", {
+                                "class": "modal-header"
+                            });
+
+                            // title
+                            var h5_modal_title = $("<h5>", {
+                                "class": "modal-title"
+                            });
+
+                            h5_modal_title.html("Update Task");
+
+                            var button_close = $("<button>", {
+                                "type": "button",
+                                "class": "close",
+                                "data-dismiss": "modal",
+                                "aria-label": "Close"
+                            });
+
+                            var span_x = $("<span>", {
+                                "aria-hidden": "true"
+                            });
+
+                            span_x.html("&times;");
+
+                            button_close.append(span_x);
+
+                            modal_header.append(h5_modal_title);
+                            modal_header.append(button_close);
+
+                            modal_content.append(modal_header);
+
+
+                            // Modal body----------------------------------------------------
+                            var modal_body = $("<div>", {
+                                "class": "modal-body"
+                            });
+
+                            // form
+                            var form_task = $("<form>", {
+                                "class": "formTaskUpdate"
+                            });
+
+                            // class_id
+                            var input_hidden_class_id = $("<input>", {
+                                "type": "hidden",
+                                "class": "class_id_task",
+                                "value": element.class_id
+                            });
+
+                            // task_id
+                            var input_hidden_task_id = $("<input>", {
+                                "type": "hidden",
+                                "class": "task_id_task",
+                                "value": element.task_id
+                            });
+
+                            form_task.append(input_hidden_class_id);
+                            form_task.append(input_hidden_task_id);
+
+                            // form-group1
+                            var form_group1 = $("<div>", {
+                                "class": "form-group"
+                            });
+
+                            var label_deadline = $("<label>", {
+                                "for": "recipient-name",
+                                "class": "col-form-label"
+                            });
+
+                            label_deadline.html("Deadline:");
+
+                            var input_date = $("<input>", {
+                                "type": "date",
+                                "id": "form_deadline",
+                                "value": element.task_deadline,
+                                "class": "form-control",
+                                "id": "recipient-name",
+                                "required": ""
+                            });
+
+                            form_group1.append(label_deadline);
+                            form_group1.append(input_date);
+
+                            // form-group2
+                            var form_group2 = $("<div>", {
+                                "class": "form-group"
+                            });
+
+                            var label_title = $("<label>", {
+                                "for": "message-text",
+                                "class": "col-form-label"
+                            });
+
+                            label_title.html("Title:");
+
+                            var input_title = $("<input>", {
+                                "type": "text",
+                                "id": "form_title",
+                                "value": element.task_title,
+                                "class": "form-control",
+                                "required": ""
+                            });
+
+                            form_group2.append(label_title);
+                            form_group2.append(input_title);
+
+                            // form-group3
+                            var form_group3 = $("<div>", {
+                                "class": "form-group"
+                            });
+
+                            var label_body = $("<label>", {
+                                "for": "message-text",
+                                "class": "col-form-label"
+                            });
+
+                            label_body.html("Body:");
+
+                            var input_body = $("<textarea>", {
+                                "class": "form-control",
+                                "id": "form_body",
+                                "required": ""
+                            });
+
+                            input_body.html(element.task_body);
+
+                            form_group3.append(label_body);
+                            form_group3.append(input_body);
+
+                            // Button done-----------------------
+                            var button_done = $("<button>", {
+                                "type": "submit",
+                                "class": "btn btn-primary"
+                            });
+
+                            button_done.html("Update")
+
+                            form_task.append(form_group1);
+                            form_task.append(form_group2);
+                            form_task.append(form_group3);
+                            form_task.append(button_done);
+
+                            modal_body.append(form_task);
+                            modal_content.append(modal_body);
+
+                            // Overall append
+
+                            modal_dialog.append(modal_content);
+                            moda_fade.append(modal_dialog);
+                            task_list.append(moda_fade);
+                    
+                            
+                            $(".formTaskView").on("submit", function(e){
+                                e.preventDefault();
+                                e.stopPropagation();
+                                e.stopImmediatePropagation();
+                                var class_id = this.children[0].value;
+                                var task_id = this.children[1].value;
+
+                                $.ajax({
+                                    url: "http://localhost/lm/api/done_task.php",
+                                    method: "POST",
+                                    data: {
+                                        class_id: class_id,
+                                        task_id: task_id
+                                    },
+                                    success: function(response){
+                                        console.log(response);
+                                        if(response == "true"){
+                                            location.reload();
+                                        }
+                                    }
+                                });
+
+                            });
+
+                            $(".formTaskUpdate").on("submit", function(e){
+                                e.preventDefault();
+                                e.stopPropagation();
+                                e.stopImmediatePropagation();
+                                var class_id = this.children[0].value;
+                                var task_id = this.children[1].value;
+                                var task_deadline = this.children[2].parentElement[2].value;
+                                var task_title = this.children[2].parentElement[3].value;
+                                var task_body = this.children[2].parentElement[4].value;
+
+                                $.ajax({
+                                    url: "http://localhost/lm/api/update_tasks.php",
+                                    method: "POST",
+                                    data: {
+                                        class_id: class_id,
+                                        task_id: task_id,
+                                        task_deadline: task_deadline,
+                                        task_title: task_title,
+                                        task_body: task_body
+                                    },
+                                    success: function(response){
+                                        console.log(response);
+                                        if(response == "true"){
+                                            location.reload();
+                                        }
+                                    }
+                                });
+
+                            });
+
+                    });
+
+                }
+            });
+
         }
     });
 
