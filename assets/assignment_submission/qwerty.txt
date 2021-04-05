@@ -1,0 +1,108 @@
+*Knowledge in Frontend and backend development.
+*PHP/MySQL,
+*Wordpress,
+*Javascript,
+*Proficient in jquery, HTML5/CSS3.
+*Experience with Shopify and liquid framework a plus.
+
+Love, family, mobile games, discrimination, bullying, change, social media, education, depression
+
+//
+XHProf
+Redis
+Nginx -> Web server // Apache
+PHP-fpm
+
+Quarantine Home Syllabus of mine
+
+Web Design - CSS & Bootstrap
+Web Develop - Javascript & PHP
+Mobile - Android Studio & Java
+Wordpress- Elementor Theme Develop
+illustrator - Icon Logo
+Photoshop - PSD Template
+
+What these can help?
+
+
+Motorcycle Tracking with GPS Mobile
+Web based Entrance Examination
+
+5e589f37733a8d001075858b
+5e6fc290ecdf7a001781e2c9
+5e7411bf10313d0010b8aa95
+5e7414fecfa6ae0017932724
+5ea13b68379e76001064b0dd
+
+https://drive.google.com/drive/folders/15mN0f9l5CZReveBsunPa-Xmm3IgsnTIh?fbclid=IwAR0gcU9KKu2hAEZnLbBBNbrnnGjNLr7Mz0ch-YBN3E7qHB5UiK_kSX7RkQs
+
+https://www.facebook.com/EFSFansub/videos/644433299832894/UzpfSTE1Mjg2MjkzNzE6MTAyMjIzOTYwMTk2NzkxNzU/
+
+
+// PHP Projects
+https://www.tayyab.org/search/label/PHP%20Projects?&max-results=7&fbclid=IwAR0sdFiaoWrksvlBhWWBu3B1Mp0IeG-N45vty9So8jX9Fur6c2Euz9y8ox4
+
+//Error Reporting
+    error_reporting(E_ALL);
+    ini_set('display_errors', 1);
+
+//White screen of doom
+       ini_set('display_startup_errors', true);
+       error_reporting(E_ALL);
+       ini_set('display_errors', true);
+
+https://www.streamanime.xyz/i-want-to-eat-your-pancreas-english-dub/
+
+//git
+git add .
+git commit -m “my code”
+git push origin master
+
+
+git remote set-url origin https://github.com/GeorgeMapili/Practice.git
+git remote set-url origin https://github.com/GeorgeMapili/newPrac.git
+
+--
+remove the git in the directory
+rm -rf .git
+
+git add .
+git commit -m ""
+git push
+
+---------
+
+kentzpalomar@gmail.com
+celester.saycon@norsu.edu.ph
+
+celesterliongsaycon@gmail.com
+
+//android studio no titlebar
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+//php db
+if($this->con->connect_error)
+
+https://www.facebook.com/100026380155063/videos/201252950764042
+lame people blame people
+
+
+-----------------------
+user: kali
+pass:thegamemakerflame
+
+Allmightyeffort1212
+
+Allmightyeffort1212
+
+georgemapili322@gmail.com
+Thegamemaker1
+
+5f636c383e031c001058e72d
+
+CHANGES MADE: added ghost sensor artifact//fixed z-index//added missing object//added missing frames//fixed standard sizes//added NLZ//fixed attributes

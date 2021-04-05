@@ -53,7 +53,6 @@ require_once("layout/php_header/student_header.php");
                             </button>
                             <div class="dropdown-menu bg-dark" aria-labelledby="dropdownMenuReference">
                                 <a class="dropdown-item" href="home.php">My Class</a>
-                                <a class="dropdown-item" href="notification.php">Notification</a>
                                 <a class="dropdown-item" href="message.php">Message</a>
                                 <a class="dropdown-item" href="request.php">Request</a>
                                 <!-- <div class="dropdown-divider"></div>

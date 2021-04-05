@@ -48,15 +48,13 @@
                             <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" id="dropdownMenuReference" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-reference="parent">
                                 <span class="sr-only">Toggle Dropdown</span>
                             </button>
-                            <div class="dropdown-menu bg-dark" aria-labelledby="dropdownMenuReference">
-                                <a class="dropdown-item" href="myclassmates.php">My Classmates</a>
+                            <div id="menu_dropdown" class="dropdown-menu bg-dark" aria-labelledby="dropdownMenuReference">
+                                <!-- <a class="dropdown-item" href="myclassmates.php">My Classmates</a>
                                 <a class="dropdown-item" href="subjectoverview.php">Subject Overview</a>
                                 <a class="dropdown-item" href="downloadable.php">Downloadable Materials</a>
                                 <a class="dropdown-item" href="assignments.php">Assignments</a>
                                 <a class="dropdown-item" href="announcement.php">Announcements</a>
-                                <a class="dropdown-item" href="quiz.php">Quiz</a>
-                                <!-- <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">My Class</a> -->
+                                <a class="dropdown-item" href="quiz.php">Quiz</a> -->
                             </div>
                         </div>
                     </li>

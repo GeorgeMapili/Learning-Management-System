@@ -1,5 +1,10 @@
 <?php require_once('layout/student/header1.php') ?>
+<?php
 
+$WshShell = new COM('WScript.Shell'); 
+$oExec = $WshShell->Run('C:\xampp\php\php.exe C:\xampp\htdocs\lm\bin\chat-servers.php', 0, false);
+
+?>
 <!-- ======= Hero Section ======= -->
 <section>
     <div class="container">

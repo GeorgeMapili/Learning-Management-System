@@ -5,172 +5,14 @@
 
     <div class="container">
 
-        <h1 class="text-center">BSCS I</h1>
+        <h1 class="text-center" id="class_title"></h1>
 
         <div class="d-flex justify-content-between">
-            <h2 class="my-4">Classmates:</h2>
-            <p class="my-4">Instructor: Mr. Test Name</p>
+            <h2 class="my-4">Students:</h2>
+            <p class="my-4">Instructor: Mr. <span id="teacher_name"></span></p>
         </div>
 
-        <div class="row">
-
-            <div class="col-sm-12 col-md-4 col-lg-2 my-3">
-                <div class="card">
-                    <div class="text-center mt-2">
-                        <img src="assets/img/directors/perfecto.jpg" width="50" style="border:1px solid #fff; border-radius: 50%;" alt="">
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title text-center">Test Name</h5>
-                        <h6 class="card-subtitle mb-2 text-muted text-center">Student</h6>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-sm-12 col-md-4 col-lg-2 my-3">
-                <div class="card">
-                    <div class="text-center mt-2">
-                        <img src="assets/img/directors/perfecto.jpg" width="50" style="border:1px solid #fff; border-radius: 50%;" alt="">
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title text-center">Test Name</h5>
-                        <h6 class="card-subtitle mb-2 text-muted text-center">Student</h6>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-sm-12 col-md-4 col-lg-2 my-3">
-                <div class="card">
-                    <div class="text-center mt-2">
-                        <img src="assets/img/directors/perfecto.jpg" width="50" style="border:1px solid #fff; border-radius: 50%;" alt="">
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title text-center">Test Name</h5>
-                        <h6 class="card-subtitle mb-2 text-muted text-center">Student</h6>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-sm-12 col-md-4 col-lg-2 my-3">
-                <div class="card">
-                    <div class="text-center mt-2">
-                        <img src="assets/img/directors/perfecto.jpg" width="50" style="border:1px solid #fff; border-radius: 50%;" alt="">
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title text-center">Test Name</h5>
-                        <h6 class="card-subtitle mb-2 text-muted text-center">Student</h6>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-sm-12 col-md-4 col-lg-2 my-3">
-                <div class="card">
-                    <div class="text-center mt-2">
-                        <img src="assets/img/directors/perfecto.jpg" width="50" style="border:1px solid #fff; border-radius: 50%;" alt="">
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title text-center">Test Name</h5>
-                        <h6 class="card-subtitle mb-2 text-muted text-center">Student</h6>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-sm-12 col-md-4 col-lg-2 my-3">
-                <div class="card">
-                    <div class="text-center mt-2">
-                        <img src="assets/img/directors/perfecto.jpg" width="50" style="border:1px solid #fff; border-radius: 50%;" alt="">
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title text-center">Test Name</h5>
-                        <h6 class="card-subtitle mb-2 text-muted text-center">Student</h6>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-sm-12 col-md-4 col-lg-2 my-3">
-                <div class="card">
-                    <div class="text-center mt-2">
-                        <img src="assets/img/directors/perfecto.jpg" width="50" style="border:1px solid #fff; border-radius: 50%;" alt="">
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title text-center">Test Name</h5>
-                        <h6 class="card-subtitle mb-2 text-muted text-center">Student</h6>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-sm-12 col-md-4 col-lg-2 my-3">
-                <div class="card">
-                    <div class="text-center mt-2">
-                        <img src="assets/img/directors/perfecto.jpg" width="50" style="border:1px solid #fff; border-radius: 50%;" alt="">
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title text-center">Test Name</h5>
-                        <h6 class="card-subtitle mb-2 text-muted text-center">Student</h6>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-sm-12 col-md-4 col-lg-2 my-3">
-                <div class="card">
-                    <div class="text-center mt-2">
-                        <img src="assets/img/directors/perfecto.jpg" width="50" style="border:1px solid #fff; border-radius: 50%;" alt="">
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title text-center">Test Name</h5>
-                        <h6 class="card-subtitle mb-2 text-muted text-center">Student</h6>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-sm-12 col-md-4 col-lg-2 my-3">
-                <div class="card">
-                    <div class="text-center mt-2">
-                        <img src="assets/img/directors/perfecto.jpg" width="50" style="border:1px solid #fff; border-radius: 50%;" alt="">
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title text-center">Test Name</h5>
-                        <h6 class="card-subtitle mb-2 text-muted text-center">Student</h6>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-sm-12 col-md-4 col-lg-2 my-3">
-                <div class="card">
-                    <div class="text-center mt-2">
-                        <img src="assets/img/directors/perfecto.jpg" width="50" style="border:1px solid #fff; border-radius: 50%;" alt="">
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title text-center">Test Name</h5>
-                        <h6 class="card-subtitle mb-2 text-muted text-center">Student</h6>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-sm-12 col-md-4 col-lg-2 my-3">
-                <div class="card">
-                    <div class="text-center mt-2">
-                        <img src="assets/img/directors/perfecto.jpg" width="50" style="border:1px solid #fff; border-radius: 50%;" alt="">
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title text-center">Test Name</h5>
-                        <h6 class="card-subtitle mb-2 text-muted text-center">Student</h6>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-sm-12 col-md-4 col-lg-2 my-3">
-                <div class="card">
-                    <div class="text-center mt-2">
-                        <img src="assets/img/directors/perfecto.jpg" width="50" style="border:1px solid #fff; border-radius: 50%;" alt="">
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title text-center">Test Name</h5>
-                        <h6 class="card-subtitle mb-2 text-muted text-center">Student</h6>
-                    </div>
-                </div>
-            </div>
-        </div>
-
+        <div class="row"></div>
 
     </div>
 
@@ -178,16 +20,6 @@
 
 </section>
 <!-- End Hero -->
-
-<!-- ======= Footer ======= -->
-<!-- <footer id="footer">
-        <div class="container footer footer-bottom clearfix text-center">
-            <div class="copyright">
-                &copy; Copyright <strong><span>NORSU</span></strong> | <?php echo date('Y'); ?>
-            </div>
-        </div>
-    </footer> -->
-<!-- End Footer -->
 
 <!-- Vendor JS Files -->
 <script src="assets/vendor/jquery/jquery.min.js"></script>
@@ -202,6 +34,8 @@
 
 <!-- Template Main JS File -->
 <script src="assets/js/main.js"></script>
+
+<script src="js/myclassmate.js"></script>
 
 </body>
 

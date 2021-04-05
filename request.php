@@ -16,55 +16,14 @@
                 <div class="list-group" style="height: 200px; overflow:scroll;">
                     <table class="table table-dark">
                         <thead>
-                            <tr>
-                                <th scope="col">Class Name</th>
-                                <th scope="col">Instructor</th>
-                                <th scope="col">Action</th>
+                            <tr class="d-flex justify-content-between">
+                                <th>Class Name</th>
+                                <th>Instructor</th>
+                                <th>Action</th>
                             </tr>
                         </thead>
-                        <tbody>
-                            <tr>
-                                <th scope="row">BSCS I</th>
-                                <td>Test Name</td>
-                                <td>
-                                    <button class="btn btn-primary">Accept</button>
-                                    <button class="btn btn-danger">Decline</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="row">BSCS I</th>
-                                <td>Test Name</td>
-                                <td>
-                                    <button class="btn btn-primary">Accept</button>
-                                    <button class="btn btn-danger">Decline</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="row">BSCS I</th>
-                                <td>Test Name</td>
-                                <td>
-                                    <button class="btn btn-primary">Accept</button>
-                                    <button class="btn btn-danger">Decline</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="row">BSCS I</th>
-                                <td>Test Name</td>
-                                <td>
-                                    <button class="btn btn-primary">Accept</button>
-                                    <button class="btn btn-danger">Decline</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="row">BSCS I</th>
-                                <td>Test Name</td>
-                                <td>
-                                    <button class="btn btn-primary">Accept</button>
-                                    <button class="btn btn-danger">Decline</button>
-                                </td>
-                            </tr>
-                        </tbody>
                     </table>
+                    <div class="tbody"></div>
                 </div>
             </div>
         </div>
@@ -73,16 +32,6 @@
 
 </section>
 <!-- End Hero -->
-
-<!-- ======= Footer ======= -->
-<!-- <footer id="footer">
-        <div class="container footer footer-bottom clearfix text-center">
-            <div class="copyright">
-                &copy; Copyright <strong><span>NORSU</span></strong> | <?php echo date('Y'); ?>
-            </div>
-        </div>
-    </footer> -->
-<!-- End Footer -->
 
 <!-- Vendor JS Files -->
 <script src="assets/vendor/jquery/jquery.min.js"></script>
@@ -97,7 +46,7 @@
 
 <!-- Template Main JS File -->
 <script src="assets/js/main.js"></script>
-
+<script src="js/request.js"></script>
 </body>
 
 </html>
