@@ -155,9 +155,4 @@ class StudentValidation
         return $newImagName;
     }
 
-    // public function saveImageFile($tmp_name)
-    // {
-    //     var_dump($tmp_name);
-    //     die();
-    // }
 }

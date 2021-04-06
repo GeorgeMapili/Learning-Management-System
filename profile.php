@@ -25,6 +25,12 @@
     <link href="assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
     <link href="assets/vendor/aos/aos.css" rel="stylesheet">
 
+    <style>
+        .error{
+            color: red;
+        }
+    </style>
+
     <!-- Template Main CSS File -->
     <link href="assets/css/style.css" rel="stylesheet">
 </head>
@@ -46,10 +52,8 @@
                             </button>
                             <div class="dropdown-menu bg-dark" aria-labelledby="dropdownMenuReference">
                                 <a class="dropdown-item" href="home.php">My Class</a>
-                                <a class="dropdown-item" href="notification.php">Notification</a>
                                 <a class="dropdown-item" href="message.php">Message</a>
-                                <!-- <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">My Class</a> -->
+                                <a class="dropdown-item" href="request.php">Request</a>
                             </div>
                         </div>
                     </li>
@@ -76,24 +80,24 @@
 
             <div class="jumbotron jumbotron-fluid">
                 <div class="container">
-                    <form>
+                    <form id="formInfo">
                         <div class="row">
                             <div class="col">
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">First Name</label>
-                                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter first name">
+                                    <input type="text" class="form-control" name="fname" id="first_name">
                                 </div>
                             </div>
                             <div class="col">
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Last Name</label>
-                                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter last name">
+                                    <input type="text" class="form-control" name="lname" id="last_name">
                                 </div>
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="exampleInputEmail1">Email</label>
-                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                            <input type="email" class="form-control" name="email_address" id="email">
                         </div>
                         <div class="text-center">
                             <button type="submit" class="btn btn-primary">Update Information</button>
@@ -104,22 +108,22 @@
 
             <div class="jumbotron jumbotron-fluid">
                 <div class="container">
-                    <form>
+                    <form id="formPass">
                         <div class="form-group">
                             <label for="exampleInputEmail1">Current Password</label>
-                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                            <input type="password" class="form-control" name="current_password" id="current_password">
                         </div>
                         <div class="row">
                             <div class="col">
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">New Password</label>
-                                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter first name">
+                                    <input type="password" class="form-control" name="new_password" id="new_password">
                                 </div>
                             </div>
                             <div class="col">
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Confirm New Password</label>
-                                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter last name">
+                                    <input type="password" class="form-control" name="confirm_new_password" id="confirm_new_password">
                                 </div>
                             </div>
                         </div>
@@ -133,10 +137,10 @@
 
             <div class="jumbotron jumbotron-fluid">
                 <div class="container">
-                    <form>
+                    <form id="formImg">
                         <div class="form-group">
                             <label for="exampleInputEmail1">Image</label>
-                            <input type="file" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                            <input type="file" name="profile" class="form-control" id="file_image">
                         </div>
 
                         <div class="text-center">
@@ -151,16 +155,6 @@
     </section>
     <!-- End Hero -->
 
-    <!-- ======= Footer ======= -->
-    <!-- <footer id="footer">
-        <div class="container footer footer-bottom clearfix text-center">
-            <div class="copyright">
-                &copy; Copyright <strong><span>NORSU</span></strong> | <?php echo date('Y'); ?>
-            </div>
-        </div>
-    </footer> -->
-    <!-- End Footer -->
-
     <!-- Vendor JS Files -->
     <script src="assets/vendor/jquery/jquery.min.js"></script>
     <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -174,6 +168,201 @@
 
     <!-- Template Main JS File -->
     <script src="assets/js/main.js"></script>
+
+    <!-- Jquery Validator -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.js"></script>
+
+    <!-- Jquery extension validator -->
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.js"></script>
+
+    <!-- Jquery File Validation -->
+    <script src="js/js/vendor/jquery.ui.widget.js"></script>
+    <script src="js/js/jquery.iframe-transport.js"></script>
+    <script src="js/js/jquery.fileupload.js"></script>
+
+    <script>
+    $.ajax({
+        url: "http://localhost/lm/api/main_data.php",
+        success: function(response){
+
+            var student_id = response.id_student;
+
+            // Information VALIDATION
+            $.ajax({
+                    url: "http://localhost/lm/api/latest_data.php",
+                    method: "POST",
+                    data: {
+                        student_id:student_id
+                    },
+                    success: function(response){
+                        console.log(response);
+
+                        $("#first_name").val(response[0].student_fname);
+                        $("#last_name").val(response[0].student_lname);
+                        $("#email").val(response[0].student_email);
+
+                        $("#formInfo").on('submit', function(e){
+                            e.preventDefault();
+
+                            var first_name = $("#first_name").val();
+                            var last_name = $("#last_name").val();
+                            var email = $("#email").val();
+
+                                $.ajax({
+                                url: "http://localhost/lm/api/update_info.php",
+                                method: "POST",
+                                data: {
+                                    student_id: student_id,
+                                    first_name: first_name,
+                                    last_name: last_name,
+                                    email: email
+                                },
+                                success: function(response){
+                                    window.location.reload();
+                                    // console.log(response);
+                                }
+                            });
+
+                        }); 
+
+                    }
+                });
+
+                // Password VALIDATION
+
+                $("#formPass").validate({
+                rules: {
+                    current_password: {
+                        required: true,
+                        minlength: 5
+                    },
+                    new_password: {
+                        required: true,
+                        minlength: 5
+                    },
+                    confirm_new_password: {
+                        required: true,
+                        equalTo: '#new_password'
+                    }
+                },
+                messages: {
+                    current_password: {
+                        required: "Current Password is required!",
+                        minlength: "Please input at least 5 characters!"
+                    },
+                    new_password: {
+                        required: "New Password is required!",
+                        minlength: "Please input at least 5 characters!"
+                    },
+                    confirm_new_password: {
+                        required: "Confirm Password is required!",
+                        equalTo: "Password do not match!"
+                    }
+                }
+                });
+
+                $("#formPass").on('submit', function(e){
+                    e.preventDefault();
+
+                    var current_password = $("#current_password").val();
+                    var new_password = $("#new_password").val();
+                    var confirm_new_password = $("#confirm_new_password").val();
+
+                    $.ajax({
+                        url: "http://localhost/lm/api/update_password.php",
+                        method: "POST",
+                        data: {
+                            current_password: current_password,
+                            new_password: new_password,
+                            confirm_new_password: confirm_new_password,
+                            student_id: student_id
+                        },
+                        success: function(response){
+                            window.location.href = 'profile.php?'+ response;
+                        }
+                    });
+
+                });
+
+                // Image VALIDATION
+
+                $.validator.addMethod("textOnly",
+                    function (value, element) {
+
+                        var numArray = 
+                            ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
+                        var containsNumber = false;
+                        
+                        $.each(value.split(''), function () {
+                            if (numArray.indexOf($(this)[0]) > -1) {
+                                containsNumber = true;
+                                return false;
+                            }
+                        });
+                        
+                        return !containsNumber;
+                    }
+                );
+
+                $.validator.addMethod('filesize', function (value, element, arg) {
+                    var minsize=2000; // min 1kb
+                    if((element.files[0].size>minsize)&&(element.files[0].size<=arg)){
+                        return true;
+                    }else{
+                        return false;
+                    }
+                });
+
+                $("#formImg").validate({
+
+                rules: {
+                    profile: {
+                        required: true,
+                        filesize: 2000000,
+                        extension: "jpg|jpeg|png"
+                    }
+                },
+                messages: {
+                    profile: {
+                        required: "Profile Image is required!",
+                        filesize:" File size must be less than 2MB",
+                        extension: "Please upload file in these format only (jpg, jpeg, png)."
+                    }
+                }
+
+                });
+
+                $("#formImg").on('submit', function(e){
+                    e.preventDefault();
+
+                    var file_data = $("#file_image").prop('files')[0];
+                    var form_data = new FormData();
+
+                    form_data.append('file', file_data);
+                    form_data.append('student_id', student_id);
+
+                    $.ajax({
+                        url: "http://localhost/lm/api/update_image.php",
+                        method: "POST",
+                        enctype: 'multipart/form-data',
+                        dataType: 'text',  // what to expect back from the PHP script, if anything
+                        cache: false,
+                        contentType: false,
+                        processData: false,
+                        data: form_data,
+                        success: function(response){
+                            // window. location. reload();
+                            console.log(response);
+                        }
+                    });
+
+                });
+
+
+                }
+                });
+
+    </script>
 
 </body>
 
