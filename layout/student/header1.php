@@ -64,7 +64,7 @@ require_once("layout/php_header/student_header.php");
                 </ul>
 
             </nav>
-
+            <p id="studentName" class="mt-3"></p>
             <a href="profile.php" class="get-started-btn scrollto">Profile</a>
             <a href="logout.php" class="get-started-btn scrollto">Logout</a>
 

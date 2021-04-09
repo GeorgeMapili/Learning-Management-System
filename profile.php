@@ -352,7 +352,7 @@
                         data: form_data,
                         success: function(response){
                             console.log(response);
-                            // window. location. reload();
+                            window. location. reload();
                         }
                     });
 

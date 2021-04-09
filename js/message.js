@@ -16,11 +16,11 @@
         // console.log(data.student_id);
         // console.log("WALL");
         // console.log($("#student_id").val());
-        console.log(data.student_id);
-        console.log($("#student_id").val());
-        console.log("WALL");
-        console.log(data.chat_mate);
-        console.log(chat_mate);
+        // console.log(data.student_id);
+        // console.log($("#student_id").val());
+        // console.log("WALL");
+        // console.log(data.chat_mate);
+        // console.log(chat_mate);
 
         if($("#student_id").val() == data.chat_mate || data.student_id == $("#student_id").val()){
 

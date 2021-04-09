@@ -15,6 +15,8 @@ class Student
     public $last_name;
     public $email;
 
+    public $fullname;
+
     public $image;
 
     public function __construct($db){
@@ -22,11 +24,12 @@ class Student
     }
 
     public function updateStudentInfo(){
-        $sql = "UPDATE students SET student_fname = :student_fname, student_lname = :student_lname, student_email = :student_email WHERE student_id = :student_id";
+        $sql = "UPDATE students SET student_fname = :student_fname, student_lname = :student_lname, student_email = :student_email, student_fullname = :student_fullname WHERE student_id = :student_id";
         $stmt = $this->db->prepare($sql);
         $stmt->bindParam(":student_fname", $this->first_name, PDO::PARAM_STR);
         $stmt->bindParam(":student_lname", $this->last_name, PDO::PARAM_STR);
         $stmt->bindParam(":student_email", $this->email, PDO::PARAM_STR);
+        $stmt->bindParam(":student_fullname", $this->fullname, PDO::PARAM_STR);
         $stmt->bindParam(":student_id", $this->student_id, PDO::PARAM_INT);
         
         if($stmt->execute()){
@@ -110,6 +113,19 @@ class Student
             return false;
         }
 
+    }
+
+    public function updateContactName(){
+        $sql = "UPDATE contact_lists SET contact_add_name = :contact_add_name WHERE contact_add_id = :contact_add_id";
+        $stmt = $this->db->prepare($sql);
+        $stmt->bindParam(":contact_add_name", $this->fullname, PDO::PARAM_STR);
+        $stmt->bindParam(":contact_add_id", $this->student_id, PDO::PARAM_INT);
+
+        if($stmt->execute()){
+            return true;
+        }else{
+            return false;
+        }
     }
 
 }

@@ -105,6 +105,24 @@ $oExec = $WshShell->Run('C:\xampp\php\php.exe C:\xampp\htdocs\lm\bin\chat-server
 <!-- Template Main JS File -->
 <script src="assets/js/main.js"></script>
 
+<script>
+    $.ajax({
+        url: "http://localhost/lm/api/main_data.php",
+        success: function(response){
+            console.log(response);
+
+            var span = $("<span>", {
+                "style": "color: white; ",
+                "class": "lead mt-3 px-3"
+            });
+
+            span.html(`${response.fname_student} ${response.lname_student}`);
+
+            $("#studentName").append(span);
+        }
+    });
+</script>
+
 <script src="js/message.js"></script>
 
 </body>

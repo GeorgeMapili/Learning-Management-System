@@ -15,6 +15,7 @@ $student->student_id = $_POST['student_id'];
 $student->first_name = trim(htmlspecialchars($_POST['first_name']));
 $student->last_name = trim(htmlspecialchars($_POST['last_name']));
 $student->email = trim(htmlspecialchars($_POST['email']));
+$student->fullname = $student->first_name. " ". $student->last_name;
 
 // Regex if name have integers
 
@@ -31,6 +32,7 @@ if(!preg_match("/^[a-zA-Z'-]+$/", $student->first_name)){
 
     $records = $student->updateStudentInfo();
     $student->updateMessageName();
+    $student->updateContactName();
 
     $_SESSION['fname'] = $student->first_name;
     $_SESSION['lname'] = $student->last_name;
