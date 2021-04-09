@@ -1,20 +1,5 @@
 $(document).ready(function () {
 
-    $.ajax({
-        url: "http://localhost/lm/api/main_data.php",
-        success: function(response){
-
-            var span = $("<span>", {
-                "style": "color: white; ",
-                "class": "lead mt-3 px-3"
-            });
-
-            span.html(`${response.fname_student} ${response.lname_student}`);
-
-            $("#studentName").append(span);
-        }
-    });
-
     var row = $(".row");
 
     $.ajax({
