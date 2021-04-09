@@ -12,91 +12,109 @@
 
         console.log(data);
 
-        if (chat_mate == "") {
+        // console.log(data.chat_mate);
+        // console.log(data.student_id);
+        // console.log("WALL");
+        // console.log($("#student_id").val());
+        console.log(data.student_id);
+        console.log($("#student_id").val());
+        console.log("WALL");
+        console.log(data.chat_mate);
+        console.log(chat_mate);
 
-        } else {
+        if($("#student_id").val() == data.chat_mate || data.student_id == $("#student_id").val()){
 
-            if (data.from == 'Me') {
+        if(((data.student_id == $("#student_id").val()) && (data.chat_mate == chat_mate)) || ((data.student_id == chat_mate) && ($("#student_id").val() == data.chat_mate))){
 
-                var li = $("<li>", {
-                    "class": "chat-left"
-                });
-                var div1 = $("<div>", {
-                    "class": "chat-avatar"
-                });
-                var img = $("<img>", {
-                    "src": data.student_image
-                });
-                var div_name = $("<div>", {
-                    "class": "chat-name"
-                });
-
-                var chat_box = $(".chat-box");
-
-                // Insert a name
-                div_name.html(data.from);
-
-                var div2 = $("<div>", {
-                    "class": "chat-text"
-                });
-                var div3 = $("<div>", {
-                    "class": "chat-hour"
-                });
-                // insert a message
-                div2.html(data.message);
-                div3.html(data.dt)
-
-                div1.append(img);
-                div1.append(div_name);
-
-                li.append(div1);
-                li.append(div2);
-                li.append(div3);
-
-                chat_box.append(li);
+        
+            if (chat_mate == "") {
 
             } else {
-                var li = $("<li>", {
-                    "class": "chat-right"
-                });
-                var div1 = $("<div>", {
-                    "class": "chat-avatar"
-                });
-                var img = $("<img>", {
-                    "src": data.student_image
-                });
-                var div_name = $("<div>", {
-                    "class": "chat-name"
-                });
-
-                var chat_box = $(".chat-box");
-
-                // Insert a name
-                div_name.html(data.from);
-
-                var div2 = $("<div>", {
-                    "class": "chat-text"
-                });
-                var div3 = $("<div>", {
-                    "class": "chat-hour"
-                });
-                // insert a message
-                div2.html(data.message);
-                div3.html(data.dt)
-
-                div1.append(img);
-                div1.append(div_name);
-
-                li.append(div3);
-                li.append(div2);
-                li.append(div1);
-
-                chat_box.append(li);
+    
+                if (data.from == 'Me') {
+    
+                    var li = $("<li>", {
+                        "class": "chat-left"
+                    });
+                    var div1 = $("<div>", {
+                        "class": "chat-avatar"
+                    });
+                    var img = $("<img>", {
+                        "src": data.student_image
+                    });
+                    var div_name = $("<div>", {
+                        "class": "chat-name"
+                    });
+    
+                    var chat_box = $(".chat-box");
+    
+                    // Insert a name
+                    div_name.html(data.from);
+    
+                    var div2 = $("<div>", {
+                        "class": "chat-text"
+                    });
+                    var div3 = $("<div>", {
+                        "class": "chat-hour"
+                    });
+                    // insert a message
+                    div2.html(data.message);
+                    div3.html(data.dt)
+    
+                    div1.append(img);
+                    div1.append(div_name);
+    
+                    li.append(div1);
+                    li.append(div2);
+                    li.append(div3);
+    
+                    chat_box.append(li);
+    
+                } else {
+                    var li = $("<li>", {
+                        "class": "chat-right"
+                    });
+                    var div1 = $("<div>", {
+                        "class": "chat-avatar"
+                    });
+                    var img = $("<img>", {
+                        "src": data.student_image
+                    });
+                    var div_name = $("<div>", {
+                        "class": "chat-name"
+                    });
+    
+                    var chat_box = $(".chat-box");
+    
+                    // Insert a name
+                    div_name.html(data.from);
+    
+                    var div2 = $("<div>", {
+                        "class": "chat-text"
+                    });
+                    var div3 = $("<div>", {
+                        "class": "chat-hour"
+                    });
+                    // insert a message
+                    div2.html(data.message);
+                    div3.html(data.dt)
+    
+                    div1.append(img);
+                    div1.append(div_name);
+    
+                    li.append(div3);
+                    li.append(div2);
+                    li.append(div1);
+    
+                    chat_box.append(li);
+                }
+    
+                $(".chat-box").scrollTop($(".chat-box")[0].scrollHeight);
+    
             }
 
-            $(".chat-box").scrollTop($(".chat-box")[0].scrollHeight);
-
         }
+    }
 
     };
 
@@ -341,8 +359,6 @@
 
                 users.append(a);
                 users.append(div2);
-
-                console.log(element);
             });
 
         }

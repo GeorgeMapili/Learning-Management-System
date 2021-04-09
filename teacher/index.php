@@ -27,6 +27,13 @@
 
     <!-- Template Main CSS File -->
     <link href="../assets/css/style.css" rel="stylesheet">
+
+    <style>
+        .error{
+            color: red;
+        }
+    </style>
+
 </head>
 
 <body>
@@ -46,14 +53,15 @@
         <div class="container">
             <div data-aos="fade-up" id="contact" class="contact">
                 <h1 class="text-center my-3">Login Teacher</h1>
-                <form class="info">
+                <form class="info" id="formTeacherLogin">
+                    <div class="loginResult"></div>
                     <div class="mb-3">
                         <label for="exampleInputEmail1" class="form-label">Email address</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                        <input type="email" name="email" class="form-control" id="email" aria-describedby="emailHelp">
                     </div>
                     <div class="mb-3">
                         <label for="exampleInputPassword1" class="form-label">Password</label>
-                        <input type="password" class="form-control" id="exampleInputPassword1">
+                        <input type="password" name="password" class="form-control" id="password">
                     </div>
                     <div class="text-center ">
                         <button type="submit" class="btn btn-info btn-block">Submit</button>
@@ -97,6 +105,11 @@
 
     <!-- Template Main JS File -->
     <script src="../assets/js/main.js"></script>
+
+    <!-- Jquery Validator -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.js"></script>
+
+    <script src="../js/teacher/index.js"></script>
 
 </body>
 

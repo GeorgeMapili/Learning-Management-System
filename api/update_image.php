@@ -39,6 +39,9 @@ unlink('../assets/img/students/' . $current_name);
         $student->student_id = $_POST['student_id'];
 
         $result = $student->updateImage();
+        $student->image = 'assets/img/students/'. $newImagName;
+        $student->updateMessageImage();
+        $student->updateImageContactList();
 
         if($result){
             move_uploaded_file($_FILES['file']['tmp_name'], '../assets/img/students/'. $newImagName);

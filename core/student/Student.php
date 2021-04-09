@@ -15,6 +15,8 @@ class Student
     public $last_name;
     public $email;
 
+    public $image;
+
     public function __construct($db){
         $this->db = $db;
     }
@@ -59,6 +61,49 @@ class Student
         $stmt->bindParam(":student_image", $this->student_image, PDO::PARAM_STR);
         $stmt->bindParam(":student_id", $this->student_id, PDO::PARAM_INT);
         
+        if($stmt->execute()){
+            return true;
+        }else{
+            return false;
+        }
+
+    }
+
+    public function updateMessageName(){
+        $sql = "UPDATE messages SET message_sender_fname = :message_sender_fname WHERE message_id_sender = :message_id_sender";
+        $stmt = $this->db->prepare($sql);
+        $stmt->bindParam(":message_sender_fname", $this->first_name, PDO::PARAM_STR);
+        $stmt->bindParam(":message_id_sender", $this->student_id, PDO::PARAM_INT);
+        
+        if($stmt->execute()){
+            return true;
+        }else{
+            return false;
+        }
+
+    }
+
+    public function updateMessageImage(){
+        $sql = "UPDATE messages SET message_sender_image = :message_sender_image WHERE message_id_sender = :message_id_sender";
+        $stmt = $this->db->prepare($sql);
+        $stmt->bindParam(":message_sender_image", $this->image, PDO::PARAM_STR);
+        $stmt->bindParam(":message_id_sender", $this->student_id, PDO::PARAM_INT);
+        
+        if($stmt->execute()){
+            return true;
+        }else{
+            return false;
+        }
+
+    }
+
+    public function updateImageContactList(){
+
+        $sql = "UPDATE contact_lists SET contact_image = :contact_image WHERE contact_add_id = :contact_add_id";
+        $stmt = $this->db->prepare($sql);
+        $stmt->bindParam(":contact_image", $this->image, PDO::PARAM_STR);
+        $stmt->bindParam(":contact_add_id", $this->student_id, PDO::PARAM_INT);
+
         if($stmt->execute()){
             return true;
         }else{

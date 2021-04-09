@@ -35,6 +35,13 @@
     <!-- Message Main CSS File -->
     <link href="../assets/css/message.css" rel="stylesheet">
 
+    <style>
+        .error{
+            color:red;
+            text-align:block
+        }
+    </style>
+
 </head>
 
 <body>
@@ -54,7 +61,6 @@
                             </button>
                             <div class="dropdown-menu bg-dark" aria-labelledby="dropdownMenuReference">
                                 <a class="dropdown-item" href="myclass.php">My Class</a>
-                                <a class="dropdown-item" href="notification.php">Notification</a>
                                 <a class="dropdown-item" href="message.php">Message</a>
                                 <!-- <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="#">My Class</a> -->
@@ -66,7 +72,7 @@
 
             </nav>
             <a href="profile.php" class="get-started-btn scrollto">Profile</a>
-            <a href="login.php" class="get-started-btn scrollto">Logout</a>
+            <a href="logout.php" class="get-started-btn scrollto">Logout</a>
 
         </div>
     </header>

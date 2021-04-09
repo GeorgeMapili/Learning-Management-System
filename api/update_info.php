@@ -30,6 +30,7 @@ if(!preg_match("/^[a-zA-Z'-]+$/", $student->first_name)){
 }else{
 
     $records = $student->updateStudentInfo();
+    $student->updateMessageName();
 
     $_SESSION['fname'] = $student->first_name;
     $_SESSION['lname'] = $student->last_name;

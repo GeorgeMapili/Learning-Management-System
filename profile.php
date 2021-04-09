@@ -351,8 +351,8 @@
                         processData: false,
                         data: form_data,
                         success: function(response){
-                            // window. location. reload();
                             console.log(response);
+                            // window. location. reload();
                         }
                     });
 

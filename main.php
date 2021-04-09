@@ -21,9 +21,6 @@ $oExec = $WshShell->Run('C:\xampp\php\php.exe C:\xampp\htdocs\lm\bin\push-server
                 <!-- <img src="assets/img/directors/perfecto.jpg" class="img-thumbnail" alt=""> -->
             </div>
             <div class="text-center" id="student_name"></div>
-            <div class="text-center">
-                <a href="">View Profile</a>
-            </div>
         </div>
         <div class="col-lg-5 col-md-12 col-sm-12 h-75 shadow-lg p-3 mb-5 bg-white rounded" style="min-height: 35vh; background: rgb(189, 187, 187);">
             <form id="formPost">
