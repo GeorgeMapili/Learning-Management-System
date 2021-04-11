@@ -109,7 +109,6 @@ $oExec = $WshShell->Run('C:\xampp\php\php.exe C:\xampp\htdocs\lm\bin\chat-server
     $.ajax({
         url: "http://localhost/lm/api/main_data.php",
         success: function(response){
-            console.log(response);
 
             var span = $("<span>", {
                 "style": "color: white; ",

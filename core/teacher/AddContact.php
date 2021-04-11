@@ -1,6 +1,6 @@
 <?php
 
-namespace core\student;
+namespace core\teacher;
 
 use PDO;
 

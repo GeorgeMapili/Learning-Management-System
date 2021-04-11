@@ -12,6 +12,11 @@ unset($_SESSION['teacher_lname']);
 unset($_SESSION['teacher_email']);
 unset($_SESSION['teacher_image']);
 
+// Message
+unset($_SESSION['contact_add_id']);
+unset($_SESSION['contact_add_img']);
+unset($_SESSION['contact_add_name']);
+
 session_destroy();
 
 header("location:index.php");

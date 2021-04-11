@@ -77,9 +77,22 @@
                     var div1 = $("<div>", {
                         "class": "chat-avatar"
                     });
-                    var img = $("<img>", {
-                        "src": data.student_image
-                    });
+
+                    if(~data.student_image.indexOf("students")){
+
+                        var img = $("<img>", {
+                            "src": data.student_image
+                        });
+
+                    }else{
+
+                        var img = $("<img>", {
+                            "src": "/lm/lm/"+data.student_image
+                        });
+
+                    }
+
+
                     var div_name = $("<div>", {
                         "class": "chat-name"
                     });
@@ -87,7 +100,7 @@
                     var chat_box = $(".chat-box");
     
                     // Insert a name
-                    div_name.html(data.from);
+                    div_name.html(data.student_fname);
     
                     var div2 = $("<div>", {
                         "class": "chat-text"
@@ -217,9 +230,21 @@
                     var div1 = $("<div>", {
                         "class": "chat-avatar"
                     });
-                    var img = $("<img>", {
-                        "src": element.message_sender_image
-                    });
+
+                    if(~element.message_sender_image.indexOf("students")){
+
+                        var img = $("<img>", {
+                            "src": element.message_sender_image
+                        });
+                        
+                    }else{
+
+                        var img = $("<img>", {
+                            "src": "/lm/lm/"+element.message_sender_image
+                        });
+
+                    }
+
                     var div_name = $("<div>", {
                         "class": "chat-name"
                     });
@@ -256,6 +281,8 @@
         }
     });
 
+
+    // Search For Contacts
     var search_contacts = $("#search-contacts");
 
     search_contacts.keyup(function() {
@@ -270,6 +297,7 @@
                 id_sender: id_sender
             },
             success: function(response) {
+                console.log(response);
 
                 var searchResults = $("#searchResults");
                 var list_group = $("<div>", {
@@ -279,15 +307,33 @@
                 if (response.message !== "No Result Found.") {
 
                     response.forEach(element => {
-                        var id = element.student_id;
-                        var a = $("<a>", {
-                            "class": "list-group-item list-group-item-action",
-                            "href": `addcontactlist.php?id=${id}&userid=${id_sender}`
-                        });
-                        a.attr("title", "Click to add to the contact list");
-                        a.html(element.student_fullname);
-                        list_group.append(a);
-                        searchResults.html(list_group);
+
+                        if(element.student_id){
+
+                            var id = element.student_id;
+                            var a = $("<a>", {
+                                "class": "list-group-item list-group-item-action",
+                                "href": `addcontactlist.php?id=${id}&userid=${id_sender}`
+                            });
+                            a.attr("title", "Click to add to the contact list");
+                            a.html(element.student_fullname);
+                            list_group.append(a);
+                            searchResults.html(list_group);
+
+                        }else{
+                            
+                            var id = element.teacher_id;
+                            var a = $("<a>", {
+                                "class": "list-group-item list-group-item-action",
+                                "href": `addcontactlist.php?id=${id}&userid=${id_sender}`
+                            });
+                            a.attr("title", "Click to add to the contact list");
+                            a.html(element.teacher_fullname);
+                            list_group.append(a);
+                            searchResults.html(list_group);
+
+                        }
+
                     });
 
                 } else {

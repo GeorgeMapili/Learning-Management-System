@@ -1,3 +1,4 @@
+<?php require_once('../layout/php_header/header_teacher.php'); ?>
 <!DOCTYPE html>
 <html lang="en">
 

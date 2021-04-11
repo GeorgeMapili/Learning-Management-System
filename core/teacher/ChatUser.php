@@ -1,6 +1,6 @@
 <?php
 
-namespace core\student;
+namespace core\teacher;
 
 use PDO;
 
@@ -23,9 +23,9 @@ class ChatUser
 
     public function getData(){
 
-        $sql = "SELECT * FROM students WHERE student_id = :id";
+        $sql = "SELECT * FROM teachers WHERE teacher_id = :id";
         $stmt = $this->db->prepare($sql);
-        $stmt->bindParam(":id",$this->chat_sender_id, PDO::PARAM_INT);
+        $stmt->bindParam(":id", $this->chat_sender_id, PDO::PARAM_INT);
         $stmt->execute();
 
         $result = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -38,9 +38,9 @@ class ChatUser
 
         }else{
 
-            $sql = "SELECT * FROM teachers WHERE teacher_id = :id";
+            $sql = "SELECT * FROM students WHERE student_id = :id";
             $stmt = $this->db->prepare($sql);
-            $stmt->bindParam(":id", $this->chat_sender_id, PDO::PARAM_INT);
+            $stmt->bindParam(":id",$this->chat_sender_id, PDO::PARAM_INT);
             $stmt->execute();
 
             $result = $stmt->fetch(PDO::FETCH_ASSOC);
