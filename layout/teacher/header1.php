@@ -53,14 +53,14 @@
                             <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" id="dropdownMenuReference" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-reference="parent">
                                 <span class="sr-only">Toggle Dropdown</span>
                             </button>
-                            <div class="dropdown-menu bg-dark" aria-labelledby="dropdownMenuReference">
-                                <a class="dropdown-item" href="mystudents.php">My Students</a>
+                            <div class="dropdown-menu bg-dark" aria-labelledby="dropdownMenuReference" id="menu_dropdown">
+                                <!-- <a class="dropdown-item" href="mystudents.php">My Students</a>
                                 <a class="dropdown-item" href="subjectoverview.php">Subject Overview</a>
                                 <a class="dropdown-item" href="downloadable.php">Downloadable Materials</a>
                                 <a class="dropdown-item" href="assignments.php">Assignments</a>
                                 <a class="dropdown-item" href="announcement.php">Announcements</a>
                                 <a class="dropdown-item" href="quiz.php">Quiz</a>
-                                <a class="dropdown-item" href="gradebook.php">Grade Book</a>
+                                <a class="dropdown-item" href="gradebook.php">Grade Book</a> -->
                                 <!-- <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="#">My Class</a> -->
                             </div>
@@ -71,7 +71,7 @@
 
             </nav>
             <a href="profile.php" class="get-started-btn scrollto">Profile</a>
-            <a href="login.php" class="get-started-btn scrollto">Logout</a>
+            <a href="logout.php" class="get-started-btn scrollto">Logout</a>
 
         </div>
     </header>

@@ -17,6 +17,7 @@ $.ajax({
                 var tbody = $(".tbody");
 
                 response.forEach(element => {
+                    console.log(element);
 
                     var tr = $("<tr>", {
                         "class": "d-flex justify-content-between"
@@ -77,6 +78,9 @@ $.ajax({
 
                         var request_id = this.children[0].value;
                         
+                        var class_id = element.class_id;
+                        var student_id = element.student_id;
+                        var teacher_id = element.teacher_id;
                         // Accept request
                         $.ajax({
                             url: "http://localhost/lm/api/accept_request.php",
@@ -86,6 +90,22 @@ $.ajax({
                             },
                             success: function(response){
                                 if(response == "true"){
+
+                                    // Add to the class
+                                    $.ajax({
+                                        url: "http://localhost/lm/api/add_request_class.php",
+                                        method: "POST",
+                                        data: {
+                                            class_id: class_id,
+                                            student_id: student_id,
+                                            teacher_id: teacher_id,
+                                            student_name: student_name
+                                        },
+                                        success: function(response1){
+                                            console.log(response1);
+                                        }
+                                    });
+
                                     window.location.reload();
                                 }
                             }

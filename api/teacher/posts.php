@@ -3,7 +3,7 @@
 header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");
 
-require_once('../vendor/autoload.php');
+require_once('../../vendor/autoload.php');
 
 use config\Database;
 use core\student\Posts;
@@ -16,7 +16,7 @@ $posts = new Posts($dbconn);
 $posts->postBody = trim(htmlspecialchars($_POST['postsContent']));
 $posts->classId = $_POST['classid'];
 $posts->postAuthor = $_POST['fullname'];
-$posts->postImage = $_POST['student_img'];
+$posts->postImage = $_POST['teacher_img'];
 $posts->postDate = date("F j, Y g:i a");
 $posts->post_date = date("Y-m-d");
 $posts->post_time = date("H:i:s");
@@ -28,7 +28,7 @@ $entryData = array(
     'content' => trim(htmlspecialchars($_POST['postsContent'])),
     'classid' => $_POST['classid'],
     'fullname' => $_POST['fullname'],
-    'img' => $_POST['student_img'],
+    'img' => $_POST['teacher_img'],
     'date' => $posts->postDate,
     'postid' => $records['post_id']
 );

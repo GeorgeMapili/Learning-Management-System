@@ -1,11 +1,17 @@
 <?php require_once('../layout/teacher/header1.php') ?>
+<?php
 
+    if(!isset($_GET['id'])){
+        header("location:myclass.php");
+    }
+
+?>
 <!-- ======= Hero Section ======= -->
 <section>
 
     <div class="container">
 
-        <h1 class="text-center">BSCS I</h1>
+        <h1 class="text-center" id="class_name"></h1>
 
         <div class="d-flex justify-content-between">
             <h2 class="my-4">My Students:</h2>
@@ -17,250 +23,25 @@
             <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered" role="document">
                     <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLongTitle">Create New Class</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body">
-                            <label for="">Student Name</label>
-                            <input type="text" class="form-control" name="" id="">
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-primary">Send Request</button>
-                        </div>
+                        <form id="formStudent">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLongTitle">Send Request</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <label for="">Student Name</label>
+                                <input type="search" class="form-control" name="student_name" id="student_name" placeholder="Search name..." autocomplete="off">
+                                <div id="resultName"></div>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="row">
-
-            <div class="col-sm-12 col-md-4 col-lg-2 my-3">
-                <div class="card">
-                    <i class="fa fa-ellipsis-h ml-auto pr-3 pt-2" aria-hidden="true" style="cursor:pointer" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <a class="dropdown-item" href="#">Remove Student</a>
-                        </div>
-                    </i>
-                    <div class="text-center mt-2">
-                        <img src="../assets/img/directors/perfecto.jpg" width="50" style="border:1px solid #fff; border-radius: 50%;" alt="">
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title text-center">Test Name</h5>
-                        <h6 class="card-subtitle mb-2 text-muted text-center">Student</h6>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-sm-12 col-md-4 col-lg-2 my-3">
-                <div class="card">
-                    <i class="fa fa-ellipsis-h ml-auto pr-3 pt-2" aria-hidden="true" style="cursor:pointer" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <a class="dropdown-item" href="#">Remove Student</a>
-                        </div>
-                    </i>
-                    <div class="text-center mt-2">
-                        <img src="../assets/img/directors/perfecto.jpg" width="50" style="border:1px solid #fff; border-radius: 50%;" alt="">
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title text-center">Test Name</h5>
-                        <h6 class="card-subtitle mb-2 text-muted text-center">Student</h6>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-sm-12 col-md-4 col-lg-2 my-3">
-                <div class="card">
-                    <i class="fa fa-ellipsis-h ml-auto pr-3 pt-2" aria-hidden="true" style="cursor:pointer" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <a class="dropdown-item" href="#">Remove Student</a>
-                        </div>
-                    </i>
-                    <div class="text-center mt-2">
-                        <img src="../assets/img/directors/perfecto.jpg" width="50" style="border:1px solid #fff; border-radius: 50%;" alt="">
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title text-center">Test Name</h5>
-                        <h6 class="card-subtitle mb-2 text-muted text-center">Student</h6>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-sm-12 col-md-4 col-lg-2 my-3">
-                <div class="card">
-                    <i class="fa fa-ellipsis-h ml-auto pr-3 pt-2" aria-hidden="true" style="cursor:pointer" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <a class="dropdown-item" href="#">Remove Student</a>
-                        </div>
-                    </i>
-                    <div class="text-center mt-2">
-                        <img src="../assets/img/directors/perfecto.jpg" width="50" style="border:1px solid #fff; border-radius: 50%;" alt="">
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title text-center">Test Name</h5>
-                        <h6 class="card-subtitle mb-2 text-muted text-center">Student</h6>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-sm-12 col-md-4 col-lg-2 my-3">
-                <div class="card">
-                    <i class="fa fa-ellipsis-h ml-auto pr-3 pt-2" aria-hidden="true" style="cursor:pointer" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <a class="dropdown-item" href="#">Remove Student</a>
-                        </div>
-                    </i>
-                    <div class="text-center mt-2">
-                        <img src="../assets/img/directors/perfecto.jpg" width="50" style="border:1px solid #fff; border-radius: 50%;" alt="">
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title text-center">Test Name</h5>
-                        <h6 class="card-subtitle mb-2 text-muted text-center">Student</h6>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-sm-12 col-md-4 col-lg-2 my-3">
-                <div class="card">
-                    <i class="fa fa-ellipsis-h ml-auto pr-3 pt-2" aria-hidden="true" style="cursor:pointer" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <a class="dropdown-item" href="#">Remove Student</a>
-                        </div>
-                    </i>
-                    <div class="text-center mt-2">
-                        <img src="../assets/img/directors/perfecto.jpg" width="50" style="border:1px solid #fff; border-radius: 50%;" alt="">
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title text-center">Test Name</h5>
-                        <h6 class="card-subtitle mb-2 text-muted text-center">Student</h6>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-sm-12 col-md-4 col-lg-2 my-3">
-                <div class="card">
-                    <i class="fa fa-ellipsis-h ml-auto pr-3 pt-2" aria-hidden="true" style="cursor:pointer" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <a class="dropdown-item" href="#">Remove Student</a>
-                        </div>
-                    </i>
-                    <div class="text-center mt-2">
-                        <img src="../assets/img/directors/perfecto.jpg" width="50" style="border:1px solid #fff; border-radius: 50%;" alt="">
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title text-center">Test Name</h5>
-                        <h6 class="card-subtitle mb-2 text-muted text-center">Student</h6>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-sm-12 col-md-4 col-lg-2 my-3">
-                <div class="card">
-                    <i class="fa fa-ellipsis-h ml-auto pr-3 pt-2" aria-hidden="true" style="cursor:pointer" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <a class="dropdown-item" href="#">Remove Student</a>
-                        </div>
-                    </i>
-                    <div class="text-center mt-2">
-                        <img src="../assets/img/directors/perfecto.jpg" width="50" style="border:1px solid #fff; border-radius: 50%;" alt="">
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title text-center">Test Name</h5>
-                        <h6 class="card-subtitle mb-2 text-muted text-center">Student</h6>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-sm-12 col-md-4 col-lg-2 my-3">
-                <div class="card">
-                    <i class="fa fa-ellipsis-h ml-auto pr-3 pt-2" aria-hidden="true" style="cursor:pointer" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <a class="dropdown-item" href="#">Remove Student</a>
-                        </div>
-                    </i>
-                    <div class="text-center mt-2">
-                        <img src="../assets/img/directors/perfecto.jpg" width="50" style="border:1px solid #fff; border-radius: 50%;" alt="">
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title text-center">Test Name</h5>
-                        <h6 class="card-subtitle mb-2 text-muted text-center">Student</h6>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-sm-12 col-md-4 col-lg-2 my-3">
-                <div class="card">
-                    <i class="fa fa-ellipsis-h ml-auto pr-3 pt-2" aria-hidden="true" style="cursor:pointer" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <a class="dropdown-item" href="#">Remove Student</a>
-                        </div>
-                    </i>
-                    <div class="text-center mt-2">
-                        <img src="../assets/img/directors/perfecto.jpg" width="50" style="border:1px solid #fff; border-radius: 50%;" alt="">
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title text-center">Test Name</h5>
-                        <h6 class="card-subtitle mb-2 text-muted text-center">Student</h6>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-sm-12 col-md-4 col-lg-2 my-3">
-                <div class="card">
-                    <i class="fa fa-ellipsis-h ml-auto pr-3 pt-2" aria-hidden="true" style="cursor:pointer" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <a class="dropdown-item" href="#">Remove Student</a>
-                        </div>
-                    </i>
-                    <div class="text-center mt-2">
-                        <img src="../assets/img/directors/perfecto.jpg" width="50" style="border:1px solid #fff; border-radius: 50%;" alt="">
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title text-center">Test Name</h5>
-                        <h6 class="card-subtitle mb-2 text-muted text-center">Student</h6>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-sm-12 col-md-4 col-lg-2 my-3">
-                <div class="card">
-                    <i class="fa fa-ellipsis-h ml-auto pr-3 pt-2" aria-hidden="true" style="cursor:pointer" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <a class="dropdown-item" href="#">Remove Student</a>
-                        </div>
-                    </i>
-                    <div class="text-center mt-2">
-                        <img src="../assets/img/directors/perfecto.jpg" width="50" style="border:1px solid #fff; border-radius: 50%;" alt="">
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title text-center">Test Name</h5>
-                        <h6 class="card-subtitle mb-2 text-muted text-center">Student</h6>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-sm-12 col-md-4 col-lg-2 my-3">
-                <div class="card">
-                    <i class="fa fa-ellipsis-h ml-auto pr-3 pt-2" aria-hidden="true" style="cursor:pointer" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <a class="dropdown-item" href="#">Remove Student</a>
-                        </div>
-                    </i>
-                    <div class="text-center mt-2">
-                        <img src="../assets/img/directors/perfecto.jpg" width="50" style="border:1px solid #fff; border-radius: 50%;" alt="">
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title text-center">Test Name</h5>
-                        <h6 class="card-subtitle mb-2 text-muted text-center">Student</h6>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
-    </div>
+        <div class="row"></div>
 
     </div>
 
@@ -285,6 +66,10 @@
 
 <!-- Template Main JS File -->
 <script src="../assets/js/main.js"></script>
+
+<!-- Jquery Validator -->
+<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.js"></script>
+<script src="../js/teacher/mystudents.js"></script>
 
 </body>
 

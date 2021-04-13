@@ -1,4 +1,3 @@
-
     var conn = new WebSocket('ws://localhost:8080');
     conn.onopen = function(e) {
         console.log("Connection established!");
@@ -12,15 +11,15 @@
         console.log(data);
 
         $.ajax({
-            url: "http://localhost/lm/api/main_data.php",
+            url: "http://localhost/lm/api/teacher/main_data.php",
             success: function(response) {
                 // console.log(response);
 
-                var id_student = response.id_student;
-                var fname_student = response.fname_student;
-                var lname_student = response.lname_student;
+                var id_teacher = response.id_teacher;
+                var fname_teacher = response.fname_teacher;
+                var lname_teacher = response.lname_teacher;
 
-                var fullname = `${fname_student} ${lname_student}`;
+                var fullname = `${fname_teacher} ${lname_teacher}`;
 
                 var cId = new URLSearchParams(window.location.search);
                 var cid = cId.get('id');
@@ -42,7 +41,7 @@
                         "class": "d-flex"
                     });
 
-                    if(~data.img.indexOf("students")){
+                    if(~data.img.indexOf("teachers")){
 
                         var img = $("<img>", {
                             "style": "height: 50px; width: 50px;",
@@ -54,7 +53,7 @@
 
                         var img = $("<img>", {
                             "style": "height: 50px; width: 50px;",
-                            "src": "/lm/lm/"+data.img,
+                            "src": "../" +data.img,
                             "class": "rounded-circle"
                         });
 
@@ -110,7 +109,7 @@
 
                         var button_class_dropdown_item_update = $("<a>", {
                             "class": "dropdown-item",
-                            "href": `http://localhost/lm/updateposts.php?class_id=${data.classid}&post_id=${data.postid}`
+                            "href": `http://localhost/lm/teacher/updateposts.php?class_id=${data.classid}&post_id=${data.postid}`
                         });
 
                         button_class_dropdown_item_update.html("Update");
@@ -121,7 +120,7 @@
 
                         var a_class_dropdown_iten_delete = $("<a>", {
                             "class": "dropdown-item",
-                            "href": `http://localhost/lm/deleteposts.php?class_id=${data.classid}&post_id=${data.postid}`,
+                            "href": `http://localhost/lm/teacher/deleteposts.php?class_id=${data.classid}&post_id=${data.postid}`,
                             "onclick": `return confirm(\'Are you sure to delete ?\')`
                         });
 
@@ -177,42 +176,44 @@
 
     };
 
-
     // Get the users information like id,name,etc.
     $.ajax({
-        url: "http://localhost/lm/api/main_data.php",
+        url: "http://localhost/lm/api/teacher/main_data.php",
         success: function(response) {
             // console.log(response);
 
-            var id_student = response.id_student;
-            var fname_student = response.fname_student;
-            var lname_student = response.lname_student;
-            var img_student = "assets/img/students/" + response.img_student;
-            var email_student = response.email_student;
+            var id_student = response.id_teacher;
+            var fname_teacher = response.fname_teacher;
+            var lname_teacher = response.lname_teacher;
+            var img_teacher = "../assets/img/teachers/" + response.img_teacher;
+            var email_teacher = response.email_teacher;
 
-            var student_name = $("#student_name");
-            var student_img = $("#student_img");
+            var teacher_name = $("#teacher_name");
+            var teacher_img = $("#teacher_img");
 
-            student_name.html(`${fname_student} ${lname_student}`);
+            teacher_name.html(`${fname_teacher} ${lname_teacher}`);
 
             var img = $("<img>", {
-                "src": img_student,
+                "src": img_teacher,
                 "class": "img-thumbnail",
                 "style": "width: 80px; height:80px;"
+                
             });
 
-            student_img.append(img);
+            teacher_img.append(img);
 
 
             // Get the class id
             var classId = new URLSearchParams(window.location.search);
             var classid = classId.get('id');
 
-            var fullname = `${fname_student} ${lname_student}`;
+            console.log(classid);
+
+            var fullname = `${fname_teacher} ${lname_teacher}`;
 
             // Get the class title
             $.ajax({
-                url: "http://localhost/lm/api/class_data.php",
+                url: "http://localhost/lm/api/teacher/class_data.php",
                 method: "POST",
                 data: {
                     classid: classid
@@ -224,10 +225,10 @@
 
                     var classmates = $("<a>", {
                         "class": "dropdown-item",
-                        "href": `myclassmates.php?id=${classid}`
+                        "href": `mystudents.php?id=${classid}`
                     });
 
-                    classmates.html("My Classmates");
+                    classmates.html("My Students");
 
                     var subject_overview = $("<a>", {
                         "class": "dropdown-item",
@@ -264,12 +265,20 @@
 
                     quiz.html("Quiz");
 
+                    var gradebook = $("<a>", {
+                        "class": "dropdown-item",
+                        "href": `gradebook.php?id=${classid}`
+                    });
+
+                    gradebook.html("Grade Book");
+
                     menu_dropdown.append(classmates);
                     menu_dropdown.append(subject_overview);
                     menu_dropdown.append(downloadable_material);
                     menu_dropdown.append(assignments);
                     menu_dropdown.append(announcements);
                     menu_dropdown.append(quiz);
+                    menu_dropdown.append(gradebook);
 
                 }
             });
@@ -282,23 +291,23 @@
 
                 // Posting
                 var postsContent = $("#postsVal").val();
-                var student_img = "assets/img/students/"+ student_img;
+                var teacher_img = img_teacher;
 
                 var data = {
                         postsContent: postsContent,
                         classid: classid,
                         fullname: fullname,
-                        student_img: img_student
+                        teacher_img: teacher_img
                     }
 
                 $.ajax({
-                    url: "http://localhost/lm/api/posts.php",
+                    url: "http://localhost/lm/api/teacher/posts.php",
                     method: "POST",
                     data: {
                         postsContent: postsContent,
                         classid: classid,
                         fullname: fullname,
-                        student_img: img_student
+                        teacher_img: teacher_img
                     },
                     success: function(response) {
                         // console.log(response);
@@ -322,7 +331,7 @@
     var classids = classIds.get('id');
 
     $.ajax({
-        url: "http://localhost/lm/api/show_posts.php",
+        url: "http://localhost/lm/api/teacher/show_posts.php",
         method: "POST",
         data: {
             classids: classids
@@ -334,15 +343,15 @@
                 // console.log(element);
 
             $.ajax({
-                url: "http://localhost/lm/api/main_data.php",
+                url: "http://localhost/lm/api/teacher/main_data.php",
                 success: function(response) {
                     // console.log(response);
 
-                    var id_student = response.id_student;
-                    var fname_student = response.fname_student;
-                    var lname_student = response.lname_student;
+                    var id_student = response.id_teacher;
+                    var fname_teacher = response.fname_teacher;
+                    var lname_teacher = response.lname_teacher;
 
-                    var fullname = `${fname_student} ${lname_student}`;
+                    var fullname = `${fname_teacher} ${lname_teacher}`;
 
                 var cId = new URLSearchParams(window.location.search);
                 var cid = cId.get('id');
@@ -364,7 +373,7 @@
                         "class": "d-flex"
                     });
 
-                    if(~element.post_img.indexOf("students")){
+                    if(~element.post_img.indexOf("teachers")){
 
                         var img = $("<img>", {
                             "style": "height: 50px; width: 50px;",
@@ -376,7 +385,7 @@
 
                         var img = $("<img>", {
                             "style": "height: 50px; width: 50px;",
-                            "src": "/lm/lm/"+element.post_img,
+                            "src": "../" +element.post_img,
                             "class": "rounded-circle"
                         });
 
@@ -430,7 +439,7 @@
 
                         var button_class_dropdown_item_update = $("<a>", {
                             "class": "dropdown-item",
-                            "href": `http://localhost/lm/updateposts.php?class_id=${element.class_id}&post_id=${element.post_id}`
+                            "href": `http://localhost/lm/teacher/updateposts.php?class_id=${element.class_id}&post_id=${element.post_id}`
                         });
 
                         button_class_dropdown_item_update.html("Update");
@@ -441,7 +450,7 @@
 
                         var a_class_dropdown_iten_delete = $("<a>", {
                             "class": "dropdown-item",
-                            "href": `http://localhost/lm/deleteposts.php?class_id=${element.class_id}&post_id=${element.post_id}`,
+                            "href": `http://localhost/lm/teacher/deleteposts.php?class_id=${element.class_id}&post_id=${element.post_id}`,
                             "onclick": `return confirm(\'Are you sure to delete ?\')`
                         });
                         
@@ -499,62 +508,63 @@
         }
     });
 
-    // Task list
+        // Task list
     
-    $("#formTask").on('submit', function(e){
+        $("#formTask").on('submit', function(e){
 
-        e.preventDefault();
+                e.preventDefault();
 
-        var task_deadline = $("#form_deadline").val();
-        var task_title = $("#form_title").val();
-        var task_body = $("#form_body").val();
+                var task_deadline = $("#form_deadline").val();
+                var task_title = $("#form_title").val();
+                var task_body = $("#form_body").val();
 
-        // Nested with the main data API
+                // Nested with the main data API
 
-        $.ajax({
-                url: "http://localhost/lm/api/main_data.php",
-                success: function(response) {
+                $.ajax({
+                        url: "http://localhost/lm/api/teacher/main_data.php",
+                        success: function(response) {
 
-                    var student_id = response.id_student;
-                    var task_author = `${response.fname_student} ${response.lname_student}`;
+                            var student_id = response.id_teacher;
+                            var task_author = `${response.fname_teacher} ${response.lname_teacher}`;
 
-                    $.ajax({
-                        url: "http://localhost/lm/api/task_list.php",
-                        method: "POST",
-                        data: {
-                            classids: classids,
-                            student_id: student_id,
-                            task_author: task_author,
-                            task_deadline: task_deadline,
-                            task_title: task_title,
-                            task_body: task_body
-                        },
-                        success: function(response1){
-                            console.log(response1);
+                            $.ajax({
+                                url: "http://localhost/lm/api/teacher/task_list.php",
+                                method: "POST",
+                                data: {
+                                    classids: classids,
+                                    student_id: student_id,
+                                    task_author: task_author,
+                                    task_deadline: task_deadline,
+                                    task_title: task_title,
+                                    task_body: task_body
+                                },
+                                success: function(response1){
+                                    console.log(response1);
 
+                                }
+                            });
+
+                            $("#form_deadline").val("");
+                            $("#form_title").val("");
+                            $("#form_body").val("");
+
+                            location.reload();
                         }
-                    });
+                })
 
-                    $("#form_deadline").val("");
-                    $("#form_title").val("");
-                    $("#form_body").val("");
+        });
 
-                    location.reload();
-                }
-        })
-
-    });
 
     // Show all the current tasks
     $.ajax({
-        url: "http://localhost/lm/api/main_data.php",
+        url: "http://localhost/lm/api/teacher/main_data.php",
         success: function(response) {
             // console.log(response);
 
-            var student_id = response.id_student;
+            var student_id = response.id_teacher;
 
             $.ajax({
-                url: "http://localhost/lm/api/show_tasks.php",
+                url: "http://localhost/lm/api/teacher/show_tasks.php",
                 method: "POST",
                 data: {
                     classids: classids,
@@ -994,7 +1004,7 @@
                                 var task_id = this.children[1].value;
 
                                 $.ajax({
-                                    url: "http://localhost/lm/api/done_task.php",
+                                    url: "http://localhost/lm/api/teacher/done_task.php",
                                     method: "POST",
                                     data: {
                                         class_id: class_id,
@@ -1021,7 +1031,7 @@
                                 var task_body = this.children[2].parentElement[4].value;
 
                                 $.ajax({
-                                    url: "http://localhost/lm/api/update_tasks.php",
+                                    url: "http://localhost/lm/api/teacher/update_tasks.php",
                                     method: "POST",
                                     data: {
                                         class_id: class_id,

@@ -7,8 +7,8 @@ session_start();
 $id_teacher =  $_SESSION['teacher_id'];
 $fname_teacher =  $_SESSION['teacher_fname'];
 $lname_teacher = $_SESSION['teacher_lname'];
-$img_teacher = $_SESSION['teacher_email'];
-$email_teacher = $_SESSION['teacher_image'];
+$img_teacher = $_SESSION['teacher_image'];
+$email_teacher = $_SESSION['teacher_email'];
 
 
 $arr = array(
