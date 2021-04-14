@@ -229,20 +229,12 @@
 
                     quiz.html("Quiz");
 
-                    var gradebook = $("<a>", {
-                        "class": "dropdown-item",
-                        "href": `gradebook.php?id=${classid}`
-                    });
-
-                    gradebook.html("Grade Book");
-
                     menu_dropdown.append(classmates);
                     menu_dropdown.append(subject_overview);
                     menu_dropdown.append(downloadable_material);
                     menu_dropdown.append(assignments);
                     menu_dropdown.append(announcements);
                     menu_dropdown.append(quiz);
-                    menu_dropdown.append(gradebook);
 
                 }
             });

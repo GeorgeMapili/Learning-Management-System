@@ -3,7 +3,7 @@
 <!-- ======= Hero Section ======= -->
 <section>
     <div class="container">
-        <h1 class="text-center">BSCS I</h1>
+        <h1 class="text-center" id="class_name"></h1>
         <h2 class="my-4">Assignment:</h2>
 
         <div class="container mb-3">
@@ -13,56 +13,27 @@
             <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered" role="document">
                     <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLongTitle">Add Assignment</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body">
-                            <form>
+                        <form id="formAssignment">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLongTitle">Add Assignment</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">File Name</label>
-                                    <input type="file" class="form-control" name="" id="" />
+                                    <input type="file" class="form-control" name="file_assignment" id="file_assignment" required/>
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Description</label>
-                                    <textarea class="form-control" rows="3"></textarea>
+                                    <textarea class="form-control" id="file_description" rows="3" required></textarea>
                                 </div>
-                                <div class="form-group">
-                                    <label for="exampleInputEmail1">Select where to place assignment</label>
-                                    <form action="">
-                                        <div class="form-group">
-                                            <input type="checkbox" name="" id="" checked>BSCS I
-                                        </div>
-                                        <div class="form-group">
-                                            <input type="checkbox" name="" id="">BSCS I
-                                        </div>
-                                        <div class="form-group">
-                                            <input type="checkbox" name="" id="">BSCS I
-                                        </div>
-                                        <div class="form-group">
-                                            <input type="checkbox" name="" id="">BSCS I
-                                        </div>
-                                        <div class="form-group">
-                                            <input type="checkbox" name="" id="">BSCS I
-                                        </div>
-                                        <div class="form-group">
-                                            <input type="checkbox" name="" id="">BSCS I
-                                        </div>
-                                        <div class="form-group">
-                                            <input type="checkbox" name="" id="">BSCS I
-                                        </div>
-                                        <div class="form-group">
-                                            <input type="checkbox" name="" id="">BSCS I
-                                        </div>
-                                    </form>
-                                </div>
-                            </form>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-primary">Add file</button>
-                        </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="submit" class="btn btn-primary">Add file</button>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -81,47 +52,7 @@
                                 <th scope="col">Action</th>
                             </tr>
                         </thead>
-                        <tbody>
-                            <tr>
-                                <th scope="row">2020-02-18</th>
-                                <td>assignment.pdf</td>
-                                <td>
-                                    Assignment Description
-                                </td>
-                                <td><a href="submitted.php" class="btn btn-primary">View Submitted</a></td>
-                                <td><button class="btn btn-danger">Delete</button></td>
-                            </tr>
-
-                            <tr>
-                                <th scope="row">2020-02-18</th>
-                                <td>assignment.pdf</td>
-                                <td>
-                                    Assignment Description
-                                </td>
-                                <td><button class="btn btn-primary">View Submitted</button></td>
-                                <td><button class="btn btn-danger">Delete</button></td>
-                            </tr>
-
-                            <tr>
-                                <th scope="row">2020-02-18</th>
-                                <td>assignment.pdf</td>
-                                <td>
-                                    Assignment Description
-                                </td>
-                                <td><button class="btn btn-primary">View Submitted</button></td>
-                                <td><button class="btn btn-danger">Delete</button></td>
-                            </tr>
-
-                            <tr>
-                                <th scope="row">2020-02-18</th>
-                                <td>assignment.pdf</td>
-                                <td>
-                                    Assignment Description
-                                </td>
-                                <td><button class="btn btn-primary">View Submitted</button></td>
-                                <td><button class="btn btn-danger">Delete</button></td>
-                            </tr>
-                        </tbody>
+                        <tbody id="showAssignment"></tbody>
                     </table>
                 </div>
             </div>
@@ -144,6 +75,7 @@
 
 <!-- Template Main JS File -->
 <script src="../assets/js/main.js"></script>
+<script src="../js/teacher/assignment.js"></script>
 
 </body>
 

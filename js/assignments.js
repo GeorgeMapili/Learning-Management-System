@@ -87,7 +87,6 @@ $.ajax({
                 var assignment_list = $("#assignment_list");
 
                 response.forEach(element => {
-                    console.log(element);
                     var assignment_id = element.assignment_id;
 
                     // Nest with another API that calls if the student is already passed an assignment
@@ -130,6 +129,10 @@ $.ajax({
 
                             small.html(element.assignment_created_at.slice(0,10));
 
+                            var small1 = $("<small>");
+
+                            small1.html(element.assignment_description);
+
                             var a = $("<a>", {
                                 "download": "",
                                 "href": `../lm/assets/assignment/${element.assignment_file}`,
@@ -152,6 +155,7 @@ $.ajax({
 
                             d_flex.append(h5);
                             d_flex.append(small);
+                            d_flex.append(small1);
                             d_flex.append(a);
                             d_flex.append(button);
 
@@ -363,6 +367,10 @@ $.ajax({
 
                                 small.html(element.assignment_created_at.slice(0,10));
 
+                                var small1 = $("<small>");
+
+                                small1.html(element.assignment_description);
+
                                 var a = $("<a>", {
                                     "download": "",
                                     "href": `../lm/assets/assignment/${element.assignment_file}`,
@@ -385,6 +393,7 @@ $.ajax({
 
                                 d_flex.append(h5);
                                 d_flex.append(small);
+                                d_flex.append(small1);
                                 d_flex.append(a);
                                 d_flex.append(button);
 

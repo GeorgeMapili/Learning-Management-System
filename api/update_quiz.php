@@ -3,12 +3,12 @@
 require_once('../vendor/autoload.php');
 
 use config\Database;
-use core\student\Assignment;
+use core\student\Quiz;
 
 $db = new Database();
 $dbconn = $db->connect();
 
-$assignment = new Assignment($dbconn);
+$quiz = new Quiz($dbconn);
 
 $length = 5;
 $newImageName =  substr(str_shuffle('ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'), 1, $length);
@@ -21,32 +21,32 @@ $extension = $ext[1];
 
 $img = $newImageName. "." .$extension;
 
-$assignment->assignment_id = $_POST['assignment_id_task'];
-$assignment->student_id = $_POST['student_id'];
-$assignment->assignment_submission_file = $img;
-$assignment->assignment_submission_description = $_POST['assignment_submission_description'];
+$quiz->quiz_id = $_POST['assignment_id_task'];
+$quiz->student_id = $_POST['student_id'];
+$quiz->quiz_file = $img;
+$quiz->quiz_description = $_POST['assignment_submission_description'];
 
 $assignment_id = $_POST['assignment_id_task'];
 $student_id = $_POST['student_id'];
 
-$sql= "SELECT * FROM assignments_submission WHERE assignment_id = :assignment_id AND student_id = :student_id";
+$sql= "SELECT * FROM quiz_submission WHERE quiz_id = :assignment_id AND student_id = :student_id";
 $stmt = $dbconn->prepare($sql);
 $stmt->bindParam(":assignment_id", $assignment_id, PDO::PARAM_INT);
 $stmt->bindParam(":student_id", $student_id, PDO::PARAM_INT);
 $stmt->execute();
 
 $result = $stmt->fetch(PDO::FETCH_ASSOC);
-$file_name = $result['assignment_submission_file'];
+$file_name = $result['quiz_submission_file'];
 
 echo $file_name;
 
-unlink('../assets/assignment_submission/'. $file_name);
+unlink('../assets/quiz_submission/'. $file_name);
 
-$records = $assignment->updateAssignment();
+$records = $quiz->updateQuiz();
 
 if($records){
 
-    move_uploaded_file($_FILES['file']['tmp_name'], '../assets/assignment_submission/'. $img);
+    move_uploaded_file($_FILES['file']['tmp_name'], '../assets/quiz_submission/'. $img);
     // if($_FILES['file']['error'] > 0){
     //     echo 'Error: ' . $_FILES['file']['error'] . '<br>';
     //   }else{

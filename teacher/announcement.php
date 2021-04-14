@@ -3,7 +3,7 @@
 <!-- ======= Hero Section ======= -->
 <section>
     <div class="container">
-        <h1 class="text-center">BSCS I</h1>
+        <h1 class="text-center" id="class_name"></h1>
         <h2 class="my-4">Announcement:</h2>
 
         <div class="container mb-3">
@@ -13,6 +13,7 @@
             <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered" role="document">
                     <div class="modal-content">
+                        <form id="announcementForm">
                         <div class="modal-header">
                             <h5 class="modal-title" id="exampleModalLongTitle">Add Announcement</h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -20,16 +21,15 @@
                             </button>
                         </div>
                         <div class="modal-body">
-                            <form>
-                                <div class="form-group">
-                                    <label for="exampleInputEmail1">Description</label>
-                                    <textarea class="form-control" rows="3"></textarea>
-                                </div>
-                            </form>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Description</label>
+                                <textarea class="form-control" rows="3" name="annoucement_desc" id="annoucement_desc"></textarea>
+                            </div>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-primary">Save Changes</button>
+                            <button type="submit" class="btn btn-primary">Save Changes</button>
                         </div>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -46,36 +46,7 @@
                                 <th scope="col">Action</th>
                             </tr>
                         </thead>
-                        <tbody>
-                            <tr>
-                                <th scope="row">2020-02-18</th>
-                                <td>
-                                    Study for the upcoming quiz
-                                </td>
-                                <td><button class="btn btn-danger">Delete</button></td>
-                            </tr>
-                            <tr>
-                                <th scope="row">2020-02-18</th>
-                                <td>
-                                    Study for the upcoming quiz
-                                </td>
-                                <td><button class="btn btn-danger">Delete</button></td>
-                            </tr>
-                            <tr>
-                                <th scope="row">2020-02-18</th>
-                                <td>
-                                    Study for the upcoming quiz
-                                </td>
-                                <td><button class="btn btn-danger">Delete</button></td>
-                            </tr>
-                            <tr>
-                                <th scope="row">2020-02-18</th>
-                                <td>
-                                    Study for the upcoming quiz
-                                </td>
-                                <td><button class="btn btn-danger">Delete</button></td>
-                            </tr>
-                        </tbody>
+                        <tbody id="showAnnouncement"></tbody>
                     </table>
                 </div>
             </div>
@@ -98,6 +69,7 @@
 
 <!-- Template Main JS File -->
 <script src="../assets/js/main.js"></script>
+<script src="../js/teacher/announcement.js"></script>
 
 </body>
 

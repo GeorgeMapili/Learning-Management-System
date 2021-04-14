@@ -11,9 +11,11 @@ $.ajax({
         classid: classid
     },
     success: function(response){
+        console.log(response);
+
         $("#class_title").html(response[0].class_name);
         $("#class_title1").html(response[0].class_name);
-        $("#class_desc").html(response[0].class_description);
+        $("#class_desc").html(response[0].class_overview);
 
         // Menu Dropdown
         var menu_dropdown = $("#menu_dropdown");
