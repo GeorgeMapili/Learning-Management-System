@@ -1,22 +1,21 @@
 $(document).ready(function(){
 
-    $.validator.addMethod("textOnly",
-        function (value, element) {
+        $.validator.addMethod("textOnly",
+            function (value, element) {
 
-            var numArray = 
-                ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
-            var containsNumber = false;
-            
-            $.each(value.split(''), function () {
-                if (numArray.indexOf($(this)[0]) > -1) {
-                    containsNumber = true;
-                    return false;
-                }
-            });
-            
-            return !containsNumber;
-        }
-       );
+                var numArray = 
+                    ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
+                var containsNumber = false;
+                
+                $.each(value.split(''), function () {
+                    if (numArray.indexOf($(this)[0]) > -1) {
+                        containsNumber = true;
+                        return false;
+                    }
+                });
+                
+                return !containsNumber;
+        });
 
         $.validator.addMethod('filesize', function (value, element, arg) {
             var minsize=2000; // min 1kb

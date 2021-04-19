@@ -1,3 +1,13 @@
+<?php
+
+session_start();
+
+if(!isset($_SESSION['admin_id']) && !isset($_SESSION['admin_name'])){
+    header("location:index.php");
+    exit;
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -35,6 +45,12 @@
     <!-- Message Main CSS File -->
     <link href="../assets/css/message.css" rel="stylesheet">
 
+    <style>
+        .error{
+            color: red;
+        }
+    </style>
+
 </head>
 
 <body>
@@ -68,7 +84,7 @@
 
             </nav>
             <a href="profile.php" class="get-started-btn scrollto">Profile</a>
-            <a href="login.php" class="get-started-btn scrollto">Logout</a>
+            <a href="logout.php" class="get-started-btn scrollto">Logout</a>
 
         </div>
     </header>

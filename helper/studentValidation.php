@@ -141,7 +141,7 @@ class StudentValidation
         $ext = explode(".", $imagename);
 
         $length = 10;
-        $newImagName =  substr(str_shuffle('0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'), 1, $length);
+        $newImagName =  substr(str_shuffle('ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'), 1, $length);
 
         $newImagName .= "." . strtolower($ext[1]);
 

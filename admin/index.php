@@ -1,3 +1,13 @@
+<?php
+
+session_start();
+
+if(isset($_SESSION['admin_id']) && isset($_SESSION['admin_name'])){
+    header("location:dashboard.php");
+    exit;
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -27,6 +37,13 @@
 
     <!-- Template Main CSS File -->
     <link href="../assets/css/style.css" rel="stylesheet">
+
+    <style>
+        .error{
+            color: red;
+        }
+    </style>
+
 </head>
 
 <body>
@@ -47,13 +64,14 @@
             <div data-aos="fade-up" id="contact" class="contact">
                 <h1 class="text-center my-3">Administrator</h1>
                 <form class="info">
+                    <div class="loginResult"></div>
                     <div class="mb-3">
                         <label for="exampleInputEmail1" class="form-label">Email address</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                        <input type="email" class="form-control" name="email" id="email" aria-describedby="emailHelp">
                     </div>
                     <div class="mb-3">
                         <label for="exampleInputPassword1" class="form-label">Password</label>
-                        <input type="password" class="form-control" id="exampleInputPassword1">
+                        <input type="password" class="form-control" name="password" id="password">
                     </div>
                     <div class="text-center ">
                         <button type="submit" class="btn btn-info btn-block">Submit</button>
@@ -97,6 +115,69 @@
 
     <!-- Template Main JS File -->
     <script src="../assets/js/main.js"></script>
+
+    <!-- Jquery Validator -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.js"></script>
+
+    <script>
+    
+    $(".info").validate({
+        rules: {
+            email: {
+                required: true,
+                email: true
+            },
+            password: {
+                required: true
+            }
+        },
+        messages: {
+            email: {
+                required: "Email is required!",
+                email: "Please enter a valid email!"
+            },
+            password: {
+                required: "Password is required!"
+            }
+        }
+
+    });
+
+
+    $(".info").on('submit', function(e){
+        e.preventDefault();
+
+        var email = $("#email").val();
+        var password = $("#password").val();
+
+        $.ajax({
+            url: "http://localhost/lm/api/admin/login.php",
+            method: "POST",
+            dataType: "json",
+            data: {
+                email: email,
+                password: password
+            },
+            success: function(response){
+                console.log(response);
+                
+                if (response.default === response.answer) {
+                    $(".loginResult").html(response.answer);
+                    $("#email").val("");
+                    $("#password").val("");
+                    window.location.href = "dashboard.php";
+                } else {
+                    $(".loginResult").html(response.answer);
+                    $("#email").val("");
+                    $("#password").val("");
+                }
+
+            }
+        });
+
+    });
+
+    </script>
 
 </body>
 

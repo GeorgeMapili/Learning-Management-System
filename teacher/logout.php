@@ -17,7 +17,5 @@ unset($_SESSION['contact_add_id']);
 unset($_SESSION['contact_add_img']);
 unset($_SESSION['contact_add_name']);
 
-session_destroy();
-
 header("location:index.php");
 exit;

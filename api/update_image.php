@@ -31,7 +31,7 @@ unlink('../assets/img/students/' . $current_name);
 
         $ext = explode("/",$_FILES['file']['type']);
         $length = 10;
-        $newImagName =  substr(str_shuffle('0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'), 1, $length);
+        $newImagName =  substr(str_shuffle('ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'), 1, $length);
 
         $newImagName .= '.' . $ext[1]; 
 
