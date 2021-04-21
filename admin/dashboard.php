@@ -7,7 +7,7 @@
 
 
         <div class="d-flex justify-content-between">
-            <h2 class="my-4">Dashboard</h2>
+            <h2 class="my-4">Administrator Dashboard</h2>
         </div>
 
         <div class="row">

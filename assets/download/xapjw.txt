@@ -1,0 +1,39 @@
+bfore
+
+Vehicle - car cc6e
+(Stationary)Incorrect Attributes in 50 frames = off
+Vehicle - car 0ca8
+(Stationary)Incorrect Attributes in 59 frames = left/off
+Vehicle - trailer 7690
+Incorrect Attributes in 80 frames = cant =tell
+Vehicle - trailer c5ad
+Incorrect Attributes in 50 frames = 30-80 off
+Vehicle - truck 45a6
+Incorrect Attributes in 41 frames 
+
+
+55555545344
+
+after
+
+Vehicle - car cc6e
+(Stationary)
+Incorrect Attributes in 80 frames
+Vehicle - car 0ca8
+(Stationary)
+Incorrect Attributes in 14 frames
+Vehicle - car 4e6e
+Incorrect Attributes in 45 frames
+Vehicle - trailer c5ad
+Incorrect Attributes in 11 frames
+Vehicle - truck 45a6
+Incorrect Attributes in 41 frames
+
+Vehicle - car 0ca8
+(Stationary)
+Incorrect Attributes in frames 0, 22, 27, 29, 56
+Vehicle - trailer c5ad
+Incorrect Attributes in 34 frames
+Vehicle - truck 45a6
+Incorrect Attributes in 12 frames
+Incorrect Face Position (Outwards) in frames 2, 3, 22, 23

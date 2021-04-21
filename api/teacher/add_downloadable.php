@@ -11,7 +11,7 @@ $dbconn = $db->connect();
 $downloadable = new Downloadable($dbconn);
 
 $length = 5;
-$newImageName =  substr(str_shuffle('0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'), 1, $length);
+$newImageName =  substr(str_shuffle('ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'), 1, $length);
 
 $ext = $_FILES['file']['name'];
 
