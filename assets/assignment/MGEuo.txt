@@ -1,9 +1,0 @@
-Construction Object - Other f848 --- incorrect label
-Vehicle - Car 5f88 --- incorrect Z
-Vehicle - Van 445d --- incorrect label
-Vehicle - Car c9d0 --- incorrect label
-Vehicle - Car 99cf --- missing cuboid(1.82x 4.21x 1.72)
-Vehicle - Car ea4f --- incorrect face position
-Vehicle - Truck e6f9 --- incorrect attribute
-Vehicle - Car ad84 --- incorrect face position
-Vehicle - Car ac2a --- missing cuboid(1.81x 4.21 x 1.55)

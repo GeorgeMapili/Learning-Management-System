@@ -75,6 +75,7 @@ if(!isset($_SESSION['admin_id']) && !isset($_SESSION['admin_name'])){
                                 <a class="dropdown-item" href="downloadable.php">Downloadable</a>
                                 <a class="dropdown-item" href="assignment.php">Assignments</a>
                                 <a class="dropdown-item" href="quiz.php">Quiz</a>
+                                <a class="dropdown-item" href="gradebook.php">Grade Book</a>
                             </div>
                         </div>
                     </li>
@@ -82,7 +83,7 @@ if(!isset($_SESSION['admin_id']) && !isset($_SESSION['admin_name'])){
                 </ul>
 
             </nav>
-            <!-- <a href="profile.php" class="get-started-btn scrollto">Profile</a> -->
+            <a href="profile.php" class="get-started-btn scrollto">Profile</a>
             <a href="logout.php" class="get-started-btn scrollto">Logout</a>
 
         </div>
